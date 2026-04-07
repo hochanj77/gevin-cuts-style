@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero.png";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
-import aboutShotTwo from "@/assets/portfolio-16.jpg";
+
 
 const Index = () => (
   <Layout>
@@ -181,23 +181,13 @@ const Index = () => (
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="grid gap-4 md:grid-cols-[0.9fr_1.1fr] md:items-end">
-              <div className="overflow-hidden border border-border bg-secondary md:translate-y-10">
-                <img
-                  src={aboutShotOne}
-                  alt="Gevin crafting a braided fade"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="overflow-hidden border border-border bg-secondary">
-                <img
-                  src={aboutShotTwo}
-                  alt="Creative haircut by Gevin"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+            <div className="overflow-hidden border border-border bg-secondary rounded-lg">
+              <img
+                src={aboutShotOne}
+                alt="Gevin crafting a braided fade"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         </div>
