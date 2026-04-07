@@ -13,13 +13,13 @@ const Index = () => (
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
       </div>
 
-      {/* Desktop: image positioned on right half */}
+      {/* Desktop: image on right, natural sizing */}
       <div className="absolute inset-0 hidden md:block">
-        <div className="absolute right-0 top-0 bottom-0 w-[55%]">
-          <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-[60%] flex items-end justify-center">
+          <img src={heroImg} alt="Gevin cutting hair" className="h-full w-auto max-w-none object-contain" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/20" />
       </div>
 
       {/* Decorative vertical line */}
