@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero.png";
 
 const Index = () => (
   <Layout>
