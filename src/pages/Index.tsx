@@ -7,17 +7,19 @@ const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative h-screen overflow-hidden bg-background">
-      {/* Background image - positioned to show full subject */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="Gevin cutting hair"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Heavy gradient from left for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        {/* Bottom gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+      {/* Mobile: full cover background */}
+      <div className="absolute inset-0 md:hidden">
+        <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+      </div>
+
+      {/* Desktop: image positioned on right half */}
+      <div className="absolute inset-0 hidden md:block">
+        <div className="absolute right-0 top-0 bottom-0 w-[55%]">
+          <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
       </div>
 
       {/* Decorative vertical line */}
