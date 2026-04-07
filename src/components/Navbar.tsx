@@ -7,7 +7,6 @@ const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Portfolio", to: "/portfolio" },
-  { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -38,7 +37,7 @@ const Navbar = () => {
             to="/contact"
             className="font-heading text-sm tracking-[0.2em] border border-foreground px-5 py-2 hover:bg-foreground hover:text-background transition-all"
           >
-            BOOK NOW
+            CONTACT
           </Link>
         </div>
 
