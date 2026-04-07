@@ -54,6 +54,7 @@ const About = () => (
               Having been guided and learned from the best, I have a refined eye in hairstyling and image consulting. I plan to follow his footsteps and open my own barbershop in time soon to come.
             </p>
           </div>
+        </motion.div>
       </div>
     </section>
   </Layout>
