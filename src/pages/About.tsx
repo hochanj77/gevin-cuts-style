@@ -4,10 +4,10 @@ import Layout from "@/components/Layout";
 const About = () => (
   <Layout>
     {/* Simple header */}
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-10 md:py-16 bg-background">
       <div className="container flex flex-col items-center justify-center">
         <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground">ABOUT</h1>
-        <div className="mt-4 flex items-center gap-3">
+        <div className="mt-3 flex items-center gap-3">
           <div className="w-8 h-px bg-accent" />
           <div className="w-2 h-2 rotate-45 border border-accent" />
           <div className="w-8 h-px bg-accent" />
