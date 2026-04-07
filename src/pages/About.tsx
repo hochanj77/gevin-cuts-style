@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero.png";
-import aboutShotOne from "@/assets/portfolio-6.jpg";
-import aboutShotTwo from "@/assets/portfolio-16.jpg";
 
 const About = () => (
   <Layout>
@@ -49,30 +47,6 @@ const About = () => (
             <p>
               Having been guided and learned from the best, I have a refined eye in hairstyling and image consulting. I plan to follow his footsteps and open my own barbershop in time soon to come.
             </p>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-
-    <section className="pb-20 md:pb-32">
-      <div className="container max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-px bg-accent" />
-            <p className="font-heading text-accent text-xs md:text-sm tracking-[0.3em]">BEHIND THE CHAIR</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="overflow-hidden bg-secondary border border-border">
-              <img src={aboutShotOne} alt="Detailed braided cut by Gevin" className="w-full h-full object-cover" />
-            </div>
-            <div className="overflow-hidden bg-secondary border border-border">
-              <img src={aboutShotTwo} alt="Creative cut photographed behind the chair" className="w-full h-full object-cover" />
-            </div>
           </div>
         </motion.div>
       </div>
