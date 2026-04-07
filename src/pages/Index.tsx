@@ -1,136 +1,142 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero.png";
+import gevinLogo from "/favicon.png";
+import hero1 from "@/assets/hero-1.jpg";
+import hero2 from "@/assets/hero-2.jpg";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
-
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative h-screen overflow-hidden bg-background">
-      {/* Mobile: full cover background */}
-      <div className="absolute inset-0 md:hidden">
-        <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
-      </div>
-
-      {/* Desktop: full hero composition with softer blend into the image */}
-      <div className="absolute inset-0 hidden md:block">
-        <img
-          src={heroImg}
-          alt="Gevin cutting hair"
-          className="absolute right-0 top-0 h-full w-auto max-w-[72%] object-contain object-right"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background))_34%,hsl(var(--background)/0.86)_48%,hsl(var(--background)/0.54)_62%,transparent_78%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_38%_46%,transparent_0%,transparent_26%,hsl(var(--background)/0.18)_46%,hsl(var(--background)/0.72)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-transparent to-background/20" />
-      </div>
-
-      {/* Decorative vertical line */}
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: "40%" }}
-        transition={{ duration: 1.2, delay: 0.5 }}
-        className="absolute left-8 md:left-16 top-24 w-px bg-accent hidden md:block"
-      />
-
-      {/* Decorative diagonal stripes — street style */}
-      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-[0.03] pointer-events-none">
+    {/* Hero — Rich in Flesh inspired */}
+    <section className="relative min-h-screen overflow-hidden bg-background">
+      {/* Decorative diagonal stripes */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
         <div className="absolute inset-0" style={{
-          backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, white 20px, white 22px)",
+          backgroundImage: "repeating-linear-gradient(-45deg, transparent, transparent 30px, white 30px, white 2px)",
         }} />
       </div>
 
-      {/* Content */}
-      <div className="relative container h-full flex flex-col justify-center">
-        <div className="max-w-2xl md:max-w-[44rem] md:rounded-r-[2rem] md:bg-background/12 md:backdrop-blur-[2px] md:pr-10">
+      {/* Swoosh curves - decorative */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-[0.06]">
+        <svg className="absolute -left-20 top-20 w-[500px] h-[800px]" viewBox="0 0 500 800" fill="none">
+          <path d="M400 0C250 100 100 300 50 500C0 700 150 800 300 750" stroke="white" strokeWidth="2" />
+          <path d="M450 0C300 120 130 320 80 520C30 720 180 820 330 770" stroke="white" strokeWidth="1.5" />
+        </svg>
+        <svg className="absolute -right-20 top-40 w-[500px] h-[800px]" viewBox="0 0 500 800" fill="none">
+          <path d="M100 0C250 100 400 300 450 500C500 700 350 800 200 750" stroke="white" strokeWidth="2" />
+          <path d="M50 0C200 120 370 320 420 520C470 720 320 820 170 770" stroke="white" strokeWidth="1.5" />
+        </svg>
+      </div>
+
+      <div className="relative container pt-24 pb-16 md:pt-32 md:pb-24">
+        {/* Top tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-center gap-6 mb-8 md:mb-12"
+        >
+          <div className="h-px bg-foreground/30 w-16 md:w-24" />
+          <p className="font-heading text-xs md:text-sm tracking-[0.4em] text-foreground/60">
+            FRESH FADES
+          </p>
+          <div className="h-px bg-foreground/30 w-16 md:w-24" />
+        </motion.div>
+
+        {/* Main hero grid: image — logo — image */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-10 items-center">
+          {/* Left image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative overflow-hidden aspect-[3/4] max-h-[70vh]"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-px bg-accent" />
-              <p className="font-heading text-accent text-xs md:text-sm tracking-[0.4em]">
-                HAIRSTYLIST & CREATIVE
-              </p>
-            </div>
+            <img
+              src={hero1}
+              alt="Precision fade haircut"
+              className="w-full h-full object-cover grayscale"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-heading text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] text-foreground mb-2"
-            style={{ textShadow: "0 4px 30px rgba(0,0,0,0.8)" }}
-          >
-            STAY
-            <br />
-            <span className="text-accent" style={{ textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}>
-              FRESH
-            </span>
-          </motion.h1>
-
+          {/* Center logo */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col items-center justify-center order-first md:order-none py-6 md:py-0"
           >
-            <div className="flex items-center gap-4 my-6 md:my-8">
-              <div className="h-px bg-accent flex-1 max-w-[80px]" />
-              <span className="font-heading text-foreground/60 text-xs tracking-[0.3em]">EST. 10 YEARS</span>
-              <div className="h-px bg-accent flex-1 max-w-[80px]" />
-            </div>
+            <img
+              src={gevinLogo}
+              alt="Gevin Cuts"
+              className="w-48 md:w-64 lg:w-80 invert"
+            />
+          </motion.div>
 
-            <p className="text-foreground/70 max-w-sm text-sm md:text-base leading-relaxed mb-10 font-light">
-              More than a barber — a craftsman. Precision cuts, 
-              creative styling, and an experience that stays with you.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/contact"
-                className="group relative font-heading text-sm tracking-[0.2em] bg-accent text-accent-foreground px-10 py-4 overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
-              >
-                <span className="relative z-10">BOOK NOW</span>
-              </Link>
-              <Link
-                to="/portfolio"
-                className="font-heading text-sm tracking-[0.2em] border border-foreground/40 text-foreground px-10 py-4 hover:border-accent hover:text-accent transition-all backdrop-blur-sm"
-              >
-                VIEW WORK
-              </Link>
-            </div>
+          {/* Right image */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative overflow-hidden aspect-[3/4] max-h-[70vh]"
+          >
+            <img
+              src={hero2}
+              alt="Gevin cutting hair"
+              className="w-full h-full object-cover grayscale"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           </motion.div>
         </div>
 
-        {/* Side text */}
+        {/* Bottom tagline */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex items-center justify-center gap-6 mt-8 md:mt-12"
         >
-          <p
-            className="font-heading text-xs tracking-[0.5em] text-foreground/20"
-            style={{ writingMode: "vertical-rl" }}
-          >
-            CLEAN CUTS • FRESH STYLE • THE CRAFT
+          <div className="h-px bg-foreground/30 w-16 md:w-24" />
+          <p className="font-heading text-xs md:text-sm tracking-[0.4em] text-foreground/60">
+            CLEAN CUTS
           </p>
+          <div className="h-px bg-foreground/30 w-16 md:w-24" />
+        </motion.div>
+
+        {/* CTA buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="flex flex-wrap justify-center gap-4 mt-10 md:mt-14"
+        >
+          <Link
+            to="/contact"
+            className="font-heading text-sm tracking-[0.2em] bg-foreground text-background px-10 py-4 hover:bg-foreground/80 transition-all"
+          >
+            BOOK NOW
+          </Link>
+          <Link
+            to="/portfolio"
+            className="font-heading text-sm tracking-[0.2em] border border-foreground/40 text-foreground px-10 py-4 hover:border-foreground hover:bg-foreground/10 transition-all"
+          >
+            VIEW WORK
+          </Link>
         </motion.div>
       </div>
 
-      {/* Hero marquee */}
-      <div className="absolute left-0 right-0 bottom-0 z-20 bg-accent py-3 overflow-hidden border-t border-background/10">
+      {/* Marquee */}
+      <div className="absolute left-0 right-0 bottom-0 z-20 bg-foreground py-3 overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           className="flex gap-8 whitespace-nowrap"
         >
           {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="font-heading text-accent-foreground text-sm tracking-[0.3em] flex items-center gap-8">
-              TIMELESS STYLE <span className="text-accent-foreground/40">✦</span> FRESH FADES <span className="text-accent-foreground/40">✦</span> CLEAN CUTS <span className="text-accent-foreground/40">✦</span>
+            <span key={i} className="font-heading text-background text-sm tracking-[0.3em] flex items-center gap-8">
+              STAY FRESH <span className="text-background/40">✦</span> CLEAN CUTS <span className="text-background/40">✦</span> TIMELESS STYLE <span className="text-background/40">✦</span>
             </span>
           ))}
         </motion.div>
@@ -148,13 +154,13 @@ const Index = () => (
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-accent" />
-              <span className="font-heading text-accent text-xs tracking-[0.3em]">ABOUT</span>
+              <div className="w-8 h-px bg-foreground" />
+              <span className="font-heading text-foreground/60 text-xs tracking-[0.3em]">ABOUT</span>
             </div>
             <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-6 leading-[0.9]">
               THE
               <br />
-              <span className="text-accent">CRAFT</span>
+              CRAFT
             </h2>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
               I take pride in my craft and achieving the most optimal results for my clients.
@@ -167,10 +173,10 @@ const Index = () => (
             </p>
             <Link
               to="/about"
-              className="inline-flex items-center gap-3 font-heading text-sm tracking-[0.2em] text-accent hover:text-foreground transition-colors group"
+              className="inline-flex items-center gap-3 font-heading text-sm tracking-[0.2em] text-foreground hover:text-foreground/70 transition-colors group"
             >
               READ MY STORY
-              <span className="inline-block w-8 h-px bg-accent group-hover:w-12 transition-all" />
+              <span className="inline-block w-8 h-px bg-foreground group-hover:w-12 transition-all" />
             </Link>
           </motion.div>
 
@@ -181,11 +187,11 @@ const Index = () => (
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="overflow-hidden border border-border bg-secondary rounded-lg">
+            <div className="overflow-hidden border border-border">
               <img
                 src={aboutShotOne}
                 alt="Gevin crafting a braided fade"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover grayscale"
                 loading="lazy"
               />
             </div>
