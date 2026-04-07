@@ -13,13 +13,16 @@ const Index = () => (
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
       </div>
 
-      {/* Desktop: image on right, natural sizing */}
+      {/* Desktop: full hero composition with softer blend into the image */}
       <div className="absolute inset-0 hidden md:block">
-        <div className="absolute right-0 top-0 bottom-0 w-[60%] flex items-end justify-center">
-          <img src={heroImg} alt="Gevin cutting hair" className="h-full w-auto max-w-none object-contain" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/20" />
+        <img
+          src={heroImg}
+          alt="Gevin cutting hair"
+          className="absolute right-0 top-0 h-full w-auto max-w-[72%] object-contain object-right"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background))_34%,hsl(var(--background)/0.86)_48%,hsl(var(--background)/0.54)_62%,transparent_78%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_38%_46%,transparent_0%,transparent_26%,hsl(var(--background)/0.18)_46%,hsl(var(--background)/0.72)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-transparent to-background/20" />
       </div>
 
       {/* Decorative vertical line */}
@@ -31,7 +34,7 @@ const Index = () => (
       />
 
       {/* Decorative diagonal stripes — street style */}
-      <div className="absolute top-0 right-0 w-1/3 h-full overflow-hidden opacity-[0.04] pointer-events-none">
+      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, white 20px, white 22px)",
         }} />
@@ -39,7 +42,7 @@ const Index = () => (
 
       {/* Content */}
       <div className="relative container h-full flex flex-col justify-center">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl md:max-w-[44rem] md:rounded-r-[2rem] md:bg-background/12 md:backdrop-blur-[2px] md:pr-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
