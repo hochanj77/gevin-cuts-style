@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero.png";
 
 const About = () => (
   <Layout>
-    {/* Hero banner */}
-    <section className="relative h-[50vh] overflow-hidden">
-      <img src={heroImg} alt="Gevin" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-background/70" />
-      <div className="absolute inset-0 flex items-center justify-center">
+    {/* Simple header */}
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container flex items-center justify-center">
         <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground">ABOUT</h1>
       </div>
     </section>
