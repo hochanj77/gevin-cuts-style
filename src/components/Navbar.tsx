@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import navLogo from "@/assets/gevin-cuts-logo.png";
-import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { label: "Home", to: "/" },
