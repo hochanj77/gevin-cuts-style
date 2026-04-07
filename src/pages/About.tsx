@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
+import aboutImg from "@/assets/portfolio-16.jpg";
 
 const About = () => (
   <Layout>
@@ -45,6 +46,21 @@ const About = () => (
               Having been guided and learned from the best, I have a refined eye in hairstyling and image consulting. I plan to follow his footsteps and open my own barbershop in time soon to come.
             </p>
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-16 overflow-hidden rounded-lg border border-border"
+        >
+          <img
+            src={aboutImg}
+            alt="Creative haircut by Gevin"
+            className="w-full max-h-[500px] object-cover"
+            loading="lazy"
+          />
         </motion.div>
       </div>
     </section>
