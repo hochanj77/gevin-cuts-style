@@ -211,29 +211,7 @@ const Index = () => (
       </div>
     </section>
 
-    {/* CTA */}
-    <section className="py-24 bg-secondary border-y border-border">
-      <div className="container text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-4">
-            READY FOR A <span className="text-accent">FRESH CUT?</span>
-          </h2>
-          <p className="text-muted-foreground mb-10 max-w-md mx-auto">
-            Book your appointment and experience the difference.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block font-heading text-sm tracking-[0.2em] bg-accent text-accent-foreground px-12 py-4 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] transition-all"
-          >
-            BOOK NOW
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+
   </Layout>
 );
 
