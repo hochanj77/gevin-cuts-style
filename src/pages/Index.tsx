@@ -65,10 +65,10 @@ const Index = () => (
             className="font-heading text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] text-foreground mb-2"
             style={{ textShadow: "0 4px 30px rgba(0,0,0,0.8)" }}
           >
-            FRESH
+            STAY
             <br />
             <span className="text-accent" style={{ textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}>
-              FADES
+              FRESH
             </span>
           </motion.h1>
 
