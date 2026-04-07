@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero.png";
+import aboutShotOne from "@/assets/portfolio-6.jpg";
+import aboutShotTwo from "@/assets/portfolio-16.jpg";
 
 const Index = () => (
   <Layout>
@@ -155,12 +157,12 @@ const Index = () => (
               <span className="text-accent">CRAFT</span>
             </h2>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
-              I take pride in my craft and achieving the most optimal results for my clients. 
-              More than a barber — a friend, a mentor, and an ear. 10 years of experience 
+              I take pride in my craft and achieving the most optimal results for my clients.
+              More than a barber — a friend, a mentor, and an ear. 10 years of experience
               cutting at "The Shop," learning from the best.
             </p>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-8">
-              Guided by my father — a legendary celebrity barber who's cut Jay-Z, Kanye West, 
+              Guided by my father — a legendary celebrity barber who's cut Jay-Z, Kanye West,
               Pharrell, and more — I bring a refined eye to every client that sits in my chair.
             </p>
             <Link
@@ -172,34 +174,41 @@ const Index = () => (
             </Link>
           </motion.div>
 
-          {/* Stats block */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="grid grid-cols-2 gap-4"
+            className="relative"
           >
-            {[
-              { num: "10+", label: "YEARS EXPERIENCE" },
-              { num: "∞", label: "HAPPY CLIENTS" },
-              { num: "2ND", label: "GENERATION BARBER" },
-              { num: "1", label: "PASSION" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="bg-secondary border border-border p-8 text-center hover:border-accent/30 transition-colors"
-              >
-                <p className="font-heading text-3xl md:text-4xl font-bold text-accent mb-2">{stat.num}</p>
-                <p className="font-heading text-[10px] tracking-[0.2em] text-muted-foreground">{stat.label}</p>
+            <div className="grid gap-4 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+              <div className="overflow-hidden border border-border bg-secondary md:translate-y-10">
+                <img
+                  src={aboutShotOne}
+                  alt="Gevin crafting a braided fade"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
-            ))}
+              <div className="overflow-hidden border border-border bg-secondary">
+                <img
+                  src={aboutShotTwo}
+                  alt="Creative haircut by Gevin"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <div className="h-px w-10 bg-accent" />
+              <p className="font-heading text-[10px] tracking-[0.3em] text-muted-foreground md:text-xs">
+                REAL WORK. REAL CLIENTS. REAL CRAFT.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
-
-
   </Layout>
 );
 
