@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import aboutImg from "@/assets/portfolio-16.jpg";
 
 const About = () => (
   <Layout>
@@ -25,14 +24,6 @@ const About = () => (
             </h2>
             <p className="font-heading text-sm tracking-[0.2em] text-accent mb-6">HAIRSTYLIST & CREATIVE</p>
             <div className="w-12 h-px bg-accent mb-6" />
-            <div className="overflow-hidden rounded-lg border border-border max-w-xs">
-              <img
-                src={aboutImg}
-                alt="Creative haircut by Gevin"
-                className="w-full object-contain"
-                loading="lazy"
-              />
-            </div>
           </div>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
