@@ -13,9 +13,6 @@ const About = () => (
           className="grid md:grid-cols-2 gap-12 items-start"
         >
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2">
-              GEVIN
-            </h2>
             <p className="font-heading text-sm tracking-[0.2em] text-accent mb-6">HAIRSTYLIST & CREATIVE</p>
             <div className="w-12 h-px bg-accent mb-6" />
           </div>
