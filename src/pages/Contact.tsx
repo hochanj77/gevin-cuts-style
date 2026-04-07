@@ -49,7 +49,7 @@ const Contact = () => {
                 <Instagram className="text-accent mt-1 shrink-0" size={20} />
                 <div>
                   <h3 className="font-heading text-lg text-foreground mb-1">SOCIAL</h3>
-                  <p className="text-muted-foreground text-sm">Follow for latest work</p>
+                  <p className="text-muted-foreground text-sm"><a href="https://instagram.com/gevcast" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">@gevcast</a></p>
                 </div>
               </div>
             </div>
