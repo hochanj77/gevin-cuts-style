@@ -1,49 +1,93 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 import Layout from "@/components/Layout";
 
-const placeholders = Array.from({ length: 6 }, (_, i) => i + 1);
+import p1 from "@/assets/portfolio-1.jpg";
+import p2 from "@/assets/portfolio-2.jpg";
+import p3 from "@/assets/portfolio-3.jpg";
+import p4 from "@/assets/portfolio-4.jpg";
+import p5 from "@/assets/portfolio-5.jpg";
+import p6 from "@/assets/portfolio-6.jpg";
+import p7 from "@/assets/portfolio-7.jpg";
+import p8 from "@/assets/portfolio-8.jpg";
+import p9 from "@/assets/portfolio-9.jpg";
+import p10 from "@/assets/portfolio-10.jpg";
 
-const Portfolio = () => (
-  <Layout>
-    <section className="py-20 md:py-32">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4">PORTFOLIO</h1>
-          <div className="w-16 h-px bg-accent mx-auto mb-6" />
-          <p className="text-muted-foreground max-w-md mx-auto">
-            A selection of cuts and styles. Every client, a unique canvas.
-          </p>
-        </motion.div>
+const images = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10];
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2">
-          {placeholders.map((i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="aspect-square bg-secondary flex items-center justify-center group cursor-pointer relative overflow-hidden"
+const Portfolio = () => {
+  const [selected, setSelected] = useState<string | null>(null);
+
+  return (
+    <Layout>
+      <section className="py-20 md:py-32">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-16"
+          >
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4">PORTFOLIO</h1>
+            <div className="w-16 h-px bg-accent mx-auto mb-6" />
+            <p className="text-muted-foreground max-w-md mx-auto">
+              A selection of cuts and styles. Every client, a unique canvas.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-2">
+            {images.map((src, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="aspect-square overflow-hidden cursor-pointer group relative"
+                onClick={() => setSelected(src)}
+              >
+                <img
+                  src={src}
+                  alt={`Haircut ${i + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-300" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center p-4"
+            onClick={() => setSelected(null)}
+          >
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-6 right-6 text-foreground hover:text-accent transition-colors"
             >
-              <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-300" />
-              <span className="font-heading text-muted-foreground text-sm tracking-[0.2em]">CUT {i}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground text-sm">
-            Portfolio images coming soon. Follow on Instagram for the latest work.
-          </p>
-        </div>
-      </div>
-    </section>
-  </Layout>
-);
+              <X size={32} />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              src={selected}
+              alt="Portfolio detail"
+              className="max-w-full max-h-[85vh] object-contain"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Layout>
+  );
+};
 
 export default Portfolio;
