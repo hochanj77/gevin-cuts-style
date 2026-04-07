@@ -119,35 +119,20 @@ const Index = () => (
         </motion.div>
       </div>
 
-      {/* Bottom scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-foreground/30 text-[10px] tracking-[0.3em] font-heading">SCROLL</span>
+      {/* Hero marquee */}
+      <div className="absolute left-0 right-0 bottom-0 z-20 bg-accent py-3 overflow-hidden border-t border-background/10">
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-px h-6 bg-accent/50"
-        />
-      </motion.div>
-    </section>
-
-    {/* Marquee strip */}
-    <section className="bg-accent py-3 overflow-hidden">
-      <motion.div
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-        className="flex gap-8 whitespace-nowrap"
-      >
-        {Array.from({ length: 10 }).map((_, i) => (
-          <span key={i} className="font-heading text-accent-foreground text-sm tracking-[0.3em] flex items-center gap-8">
-            FRESH FADES <span className="text-accent-foreground/40">✦</span> CLEAN CUTS <span className="text-accent-foreground/40">✦</span> TIMELESS STYLE <span className="text-accent-foreground/40">✦</span>
-          </span>
-        ))}
-      </motion.div>
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          className="flex gap-8 whitespace-nowrap"
+        >
+          {Array.from({ length: 10 }).map((_, i) => (
+            <span key={i} className="font-heading text-accent-foreground text-sm tracking-[0.3em] flex items-center gap-8">
+              TIMELESS STYLE <span className="text-accent-foreground/40">✦</span> FRESH FADES <span className="text-accent-foreground/40">✦</span> CLEAN CUTS <span className="text-accent-foreground/40">✦</span>
+            </span>
+          ))}
+        </motion.div>
+      </div>
     </section>
 
     {/* About preview */}
