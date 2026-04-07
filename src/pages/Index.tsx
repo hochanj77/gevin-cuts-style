@@ -1,126 +1,122 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import gevinLogo from "/favicon.png";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
 
 const Index = () => (
   <Layout>
-    {/* Hero — Rich in Flesh inspired */}
-    <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Decorative diagonal stripes */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "repeating-linear-gradient(-45deg, transparent, transparent 30px, white 30px, white 2px)",
-        }} />
-      </div>
-
-      {/* Swoosh curves - decorative */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-[0.06]">
-        <svg className="absolute -left-20 top-20 w-[500px] h-[800px]" viewBox="0 0 500 800" fill="none">
-          <path d="M400 0C250 100 100 300 50 500C0 700 150 800 300 750" stroke="white" strokeWidth="2" />
-          <path d="M450 0C300 120 130 320 80 520C30 720 180 820 330 770" stroke="white" strokeWidth="1.5" />
-        </svg>
-        <svg className="absolute -right-20 top-40 w-[500px] h-[800px]" viewBox="0 0 500 800" fill="none">
-          <path d="M100 0C250 100 400 300 450 500C500 700 350 800 200 750" stroke="white" strokeWidth="2" />
-          <path d="M50 0C200 120 370 320 420 520C470 720 320 820 170 770" stroke="white" strokeWidth="1.5" />
-        </svg>
-      </div>
-
-      <div className="relative container pt-24 pb-16 md:pt-32 md:pb-24">
-        {/* Top tagline */}
+    {/* Hero — full-bleed cinematic layout */}
+    <section className="relative h-screen overflow-hidden bg-background">
+      {/* Background images — edge to edge */}
+      <div className="absolute inset-0 flex">
+        {/* Left image */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-center gap-6 mb-8 md:mb-12"
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="w-1/2 h-full relative"
         >
-          <div className="h-px bg-foreground/30 w-16 md:w-24" />
-          <p className="font-heading text-xs md:text-sm tracking-[0.4em] text-foreground/60">
-            FRESH FADES
-          </p>
-          <div className="h-px bg-foreground/30 w-16 md:w-24" />
+          <img
+            src={hero2}
+            alt="Gevin cutting hair"
+            className="w-full h-full object-cover object-center grayscale"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background" />
+          <div className="absolute inset-0 bg-background/30" />
         </motion.div>
 
-        {/* Main hero grid: image — logo — image */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-10 items-center">
-          {/* Left image */}
+        {/* Right image */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="w-1/2 h-full relative"
+        >
+          <img
+            src={hero1}
+            alt="Precision fade haircut"
+            className="w-full h-full object-cover object-center grayscale"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background" />
+          <div className="absolute inset-0 bg-background/30" />
+        </motion.div>
+      </div>
+
+      {/* Decorative swoosh curves */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <svg className="absolute -left-10 top-0 w-[40%] h-full opacity-[0.08]" viewBox="0 0 400 800" fill="none" preserveAspectRatio="none">
+          <path d="M350 0C200 150 50 300 30 500C10 700 200 800 350 750" stroke="white" strokeWidth="3" />
+          <path d="M380 0C230 160 70 310 50 510C30 710 220 810 370 760" stroke="white" strokeWidth="1.5" />
+          <path d="M320 0C170 140 30 290 10 490C-10 690 180 790 330 740" stroke="white" strokeWidth="1" />
+        </svg>
+        <svg className="absolute -right-10 top-0 w-[40%] h-full opacity-[0.08]" viewBox="0 0 400 800" fill="none" preserveAspectRatio="none">
+          <path d="M50 0C200 150 350 300 370 500C390 700 200 800 50 750" stroke="white" strokeWidth="3" />
+          <path d="M20 0C170 160 330 310 350 510C370 710 180 810 30 760" stroke="white" strokeWidth="1.5" />
+          <path d="M80 0C230 140 370 290 390 490C410 690 220 790 70 740" stroke="white" strokeWidth="1" />
+        </svg>
+      </div>
+
+      {/* Center content overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+        {/* Tagline left & right of logo */}
+        <div className="flex items-center gap-4 md:gap-8 w-full max-w-5xl px-4">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative overflow-hidden aspect-[3/4] max-h-[70vh]"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex items-center gap-3 flex-1 justify-end"
           >
-            <img
-              src={hero1}
-              alt="Precision fade haircut"
-              className="w-full h-full object-cover grayscale"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            <p className="font-heading text-[10px] md:text-xs tracking-[0.3em] text-foreground/70 whitespace-nowrap">
+              FRESH FADES
+            </p>
+            <div className="h-px bg-foreground/40 w-8 md:w-16" />
           </motion.div>
 
-          {/* Center logo */}
+          {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col items-center justify-center order-first md:order-none py-6 md:py-0"
+            transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+            className="flex-shrink-0"
           >
             <img
-              src={gevinLogo}
+              src="/favicon.png"
               alt="Gevin Cuts"
-              className="w-48 md:w-64 lg:w-80 invert"
+              className="w-40 md:w-64 lg:w-80 xl:w-96 drop-shadow-[0_0_40px_rgba(255,255,255,0.15)] invert"
             />
           </motion.div>
 
-          {/* Right image */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative overflow-hidden aspect-[3/4] max-h-[70vh]"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex items-center gap-3 flex-1"
           >
-            <img
-              src={hero2}
-              alt="Gevin cutting hair"
-              className="w-full h-full object-cover grayscale"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            <div className="h-px bg-foreground/40 w-8 md:w-16" />
+            <p className="font-heading text-[10px] md:text-xs tracking-[0.3em] text-foreground/70 whitespace-nowrap">
+              CLEAN CUTS
+            </p>
           </motion.div>
         </div>
 
-        {/* Bottom tagline */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex items-center justify-center gap-6 mt-8 md:mt-12"
-        >
-          <div className="h-px bg-foreground/30 w-16 md:w-24" />
-          <p className="font-heading text-xs md:text-sm tracking-[0.4em] text-foreground/60">
-            CLEAN CUTS
-          </p>
-          <div className="h-px bg-foreground/30 w-16 md:w-24" />
-        </motion.div>
-
-        {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
-          className="flex flex-wrap justify-center gap-4 mt-10 md:mt-14"
+          transition={{ duration: 0.7, delay: 1 }}
+          className="flex gap-4 mt-10 md:mt-14"
         >
           <Link
             to="/contact"
-            className="font-heading text-sm tracking-[0.2em] bg-foreground text-background px-10 py-4 hover:bg-foreground/80 transition-all"
+            className="font-heading text-xs md:text-sm tracking-[0.2em] bg-foreground text-background px-8 md:px-10 py-3 md:py-4 hover:bg-foreground/80 transition-all"
           >
             BOOK NOW
           </Link>
           <Link
             to="/portfolio"
-            className="font-heading text-sm tracking-[0.2em] border border-foreground/40 text-foreground px-10 py-4 hover:border-foreground hover:bg-foreground/10 transition-all"
+            className="font-heading text-xs md:text-sm tracking-[0.2em] border border-foreground/50 text-foreground px-8 md:px-10 py-3 md:py-4 hover:bg-foreground/10 transition-all"
           >
             VIEW WORK
           </Link>
@@ -128,14 +124,14 @@ const Index = () => (
       </div>
 
       {/* Marquee */}
-      <div className="absolute left-0 right-0 bottom-0 z-20 bg-foreground py-3 overflow-hidden">
+      <div className="absolute left-0 right-0 bottom-0 z-20 bg-foreground py-2.5 overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
           className="flex gap-8 whitespace-nowrap"
         >
           {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="font-heading text-background text-sm tracking-[0.3em] flex items-center gap-8">
+            <span key={i} className="font-heading text-background text-xs tracking-[0.3em] flex items-center gap-8">
               STAY FRESH <span className="text-background/40">✦</span> CLEAN CUTS <span className="text-background/40">✦</span> TIMELESS STYLE <span className="text-background/40">✦</span>
             </span>
           ))}
