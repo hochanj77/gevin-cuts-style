@@ -16,10 +16,11 @@ import p12 from "@/assets/portfolio-12.jpg";
 import p13 from "@/assets/portfolio-13.jpg";
 import p14 from "@/assets/portfolio-14.jpg";
 import p15 from "@/assets/portfolio-15.jpg";
+import p16 from "@/assets/portfolio-16.jpg";
 import p17 from "@/assets/portfolio-17.jpg";
 import p18 from "@/assets/portfolio-18.jpg";
 
-const images = [p1, p2, p3, p4, p5, p7, p8, p9, p11, p12, p13, p14, p15, p17, p18];
+const images = [p1, p2, p3, p4, p5, p7, p8, p9, p11, p12, p13, p14, p15, p16, p17, p18];
 
 const Portfolio = () => {
   const [selected, setSelected] = useState<string | null>(null);
