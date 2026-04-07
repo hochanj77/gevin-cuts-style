@@ -74,7 +74,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="font-heading text-lg tracking-[0.2em] border border-foreground px-5 py-2 text-center hover:bg-foreground hover:text-background transition-all mt-2"
               >
-                BOOK NOW
+                CONTACT
               </Link>
             </div>
           </motion.div>
