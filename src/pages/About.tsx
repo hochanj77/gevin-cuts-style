@@ -23,8 +23,16 @@ const About = () => (
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2">
               GEVIN
             </h2>
-            <p className="font-heading text-sm tracking-[0.2em] text-accent mb-8">HAIRSTYLIST & CREATIVE</p>
-            <div className="w-12 h-px bg-accent mb-8" />
+            <p className="font-heading text-sm tracking-[0.2em] text-accent mb-6">HAIRSTYLIST & CREATIVE</p>
+            <div className="w-12 h-px bg-accent mb-6" />
+            <div className="overflow-hidden rounded-lg border border-border max-w-xs">
+              <img
+                src={aboutImg}
+                alt="Creative haircut by Gevin"
+                className="w-full object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
@@ -46,22 +54,6 @@ const About = () => (
               Having been guided and learned from the best, I have a refined eye in hairstyling and image consulting. I plan to follow his footsteps and open my own barbershop in time soon to come.
             </p>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mt-16 overflow-hidden rounded-lg border border-border"
-        >
-          <img
-            src={aboutImg}
-            alt="Creative haircut by Gevin"
-            className="w-full max-h-[500px] object-cover"
-            loading="lazy"
-          />
-        </motion.div>
       </div>
     </section>
   </Layout>
