@@ -199,12 +199,6 @@ const Index = () => (
                 />
               </div>
             </div>
-            <div className="mt-5 flex items-center gap-3">
-              <div className="h-px w-10 bg-accent" />
-              <p className="font-heading text-[10px] tracking-[0.3em] text-muted-foreground md:text-xs">
-                REAL WORK. REAL CLIENTS. REAL CRAFT.
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>
