@@ -9,8 +9,8 @@ const Footer = () => (
           GEVIN
         </Link>
         <div className="flex items-center gap-6">
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-            <Instagram size={20} />
+          <a href="https://instagram.com/gevcast" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+            <Instagram size={20} /> <span className="text-sm">@gevcast</span>
           </a>
         </div>
         <p className="text-muted-foreground text-sm">
