@@ -76,16 +76,6 @@ const About = () => (
                 <p className="font-heading text-2xl text-foreground">A DECADE BEHIND THE CHAIR</p>
               </div>
             </div>
-            {/* Floating accent badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="absolute -bottom-6 -left-6 md:-left-10 glass-strong rounded-2xl px-5 py-4"
-            >
-              <p className="font-heading text-3xl text-accent leading-none">10+</p>
-              <p className="text-xs tracking-widest text-muted-foreground mt-1">YRS CRAFT</p>
-            </motion.div>
           </motion.div>
         </div>
       </div>
