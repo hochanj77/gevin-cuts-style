@@ -107,19 +107,9 @@ const Index = () => (
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent shadow-[0_0_8px_hsl(var(--accent))]" />
             </span>
             <p className="font-mono text-accent text-[10px] md:text-xs tracking-[0.3em]">
-              [ ONLINE ] · GEVIN.exe · v10.0
+              [ ONLINE ] · GEVIN
             </p>
           </motion.div>
-
-          {/* Coordinates line */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-mono text-[10px] md:text-xs text-accent/60 tracking-widest mb-3"
-          >
-            {">"} LOAD HERO.module ░░░░░░░░░░ 100%
-          </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
