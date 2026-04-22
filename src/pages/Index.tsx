@@ -8,11 +8,18 @@ import aboutShotOne from "@/assets/portfolio-6.jpg";
 const Index = () => (
   <Layout>
     {/* Hero */}
-    <section className="relative h-screen overflow-hidden bg-background">
+    <section className="relative min-h-screen overflow-hidden bg-background">
+      {/* Ambient liquid background blobs */}
+      <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-accent/15 blur-[120px]" />
+        <div className="absolute top-1/3 -right-40 w-[36rem] h-[36rem] rounded-full bg-foreground/5 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/4 w-[28rem] h-[28rem] rounded-full bg-accent/10 blur-[100px]" />
+      </div>
+
       {/* Mobile: full cover background */}
       <div className="absolute inset-0 md:hidden">
         <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
       </div>
 
       {/* Desktop: full hero composition with softer blend into the image */}
@@ -20,20 +27,12 @@ const Index = () => (
         <img
           src={heroImg}
           alt="Gevin cutting hair"
-          className="absolute right-0 top-0 h-full w-auto max-w-[72%] object-contain object-right"
+          className="absolute right-0 top-0 h-full w-auto max-w-[70%] object-contain object-right"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background))_34%,hsl(var(--background)/0.86)_48%,hsl(var(--background)/0.54)_62%,transparent_78%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_38%_46%,transparent_0%,transparent_26%,hsl(var(--background)/0.18)_46%,hsl(var(--background)/0.72)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-transparent to-background/20" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background))_32%,hsl(var(--background)/0.88)_46%,hsl(var(--background)/0.55)_62%,transparent_80%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_38%_46%,transparent_0%,transparent_28%,hsl(var(--background)/0.16)_48%,hsl(var(--background)/0.7)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/25" />
       </div>
-
-      {/* Decorative vertical line */}
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: "40%" }}
-        transition={{ duration: 1.2, delay: 0.5 }}
-        className="absolute left-8 md:left-16 top-24 w-px bg-accent hidden md:block"
-      />
 
       {/* Decorative diagonal stripes — street style */}
       <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-[0.03] pointer-events-none">
@@ -43,69 +42,83 @@ const Index = () => (
       </div>
 
       {/* Content */}
-      <div className="relative container h-full flex flex-col justify-center">
-        <div className="max-w-2xl md:max-w-[44rem] md:rounded-r-[2rem] md:bg-background/12 md:backdrop-blur-[2px] md:pr-10">
+      <div className="relative container h-full min-h-screen flex flex-col justify-center pb-24 md:pb-28">
+        <div className="max-w-2xl md:max-w-[46rem]">
+          {/* Eyebrow chip */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 mb-8 rounded-full glass glass-sheen px-4 py-2"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-px bg-accent" />
-              <p className="font-heading text-accent text-xs md:text-sm tracking-[0.4em]">
-                HAIRSTYLIST & CREATIVE
-              </p>
-            </div>
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            <p className="font-heading text-accent text-[10px] md:text-xs tracking-[0.35em]">
+              HAIRSTYLIST · CREATIVE · EST. 2014
+            </p>
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-heading text-6xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] text-foreground mb-2"
-            style={{ textShadow: "0 4px 30px rgba(0,0,0,0.8)" }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="font-heading text-7xl sm:text-8xl md:text-[8.5rem] lg:text-[11rem] font-bold leading-[0.82] tracking-tight text-foreground"
+            style={{ textShadow: "0 4px 40px hsl(0 0% 0% / 0.6)" }}
           >
             STAY
             <br />
-            <span className="text-accent" style={{ textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}>
-              FRESH
+            <span className="bg-gradient-to-br from-accent via-accent to-accent/60 bg-clip-text text-transparent">
+              FRESH.
             </span>
           </motion.h1>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="mt-8 md:mt-10"
           >
-            <div className="flex items-center gap-4 my-6 md:my-8">
-              <div className="h-px bg-accent flex-1 max-w-[80px]" />
-              <span className="font-heading text-foreground/60 text-xs tracking-[0.3em]">EST. 10 YEARS</span>
-              <div className="h-px bg-accent flex-1 max-w-[80px]" />
-            </div>
-
-            <p className="text-foreground/70 max-w-sm text-sm md:text-base leading-relaxed mb-10 font-light">
-              More than a barber — a craftsman. Precision cuts, 
-              creative styling, and an experience that stays with you.
+            <p className="text-foreground/75 max-w-md text-base md:text-lg leading-relaxed font-light mb-10">
+              More than a barber — a craftsman. Precision cuts, creative styling,
+              and an experience that stays with you long after the chair.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 md:gap-4">
               <Link
                 to="/contact"
-                className="group relative font-heading text-sm tracking-[0.2em] rounded-xl bg-gradient-to-r from-accent via-accent to-accent/80 text-accent-foreground px-10 py-4 overflow-hidden border border-accent/40 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.25)] transition-all hover:shadow-[0_8px_30px_-4px_hsl(var(--accent)/0.5)] hover:brightness-110"
+                className="group relative inline-flex items-center gap-2 font-heading text-xs md:text-sm tracking-[0.25em] rounded-full bg-accent text-accent-foreground px-8 py-4 overflow-hidden border border-accent-foreground/10 shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.6),inset_0_1px_0_0_hsl(var(--foreground)/0.2)] transition-all hover:brightness-110 hover:shadow-[0_14px_50px_-8px_hsl(var(--accent)/0.7),inset_0_1px_0_0_hsl(var(--foreground)/0.25)]"
               >
                 <span className="relative z-10">BOOK NOW</span>
+                <span className="relative z-10 transition-transform group-hover:translate-x-1">→</span>
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-foreground/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </Link>
               <Link
                 to="/portfolio"
-                className="font-heading text-sm tracking-[0.2em] rounded-xl border border-foreground/20 bg-foreground/[0.05] backdrop-blur-xl text-foreground px-10 py-4 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.1)] hover:border-accent/60 hover:text-accent hover:bg-foreground/[0.08] transition-all"
+                className="inline-flex items-center gap-2 font-heading text-xs md:text-sm tracking-[0.25em] rounded-full glass glass-sheen text-foreground px-8 py-4 hover:text-accent hover:border-accent/40 transition-all"
               >
                 VIEW WORK
               </Link>
             </div>
+
+            {/* Mini stat row */}
+            <div className="mt-12 md:mt-14 grid grid-cols-3 max-w-md gap-4">
+              {[
+                { v: "10+", l: "YRS" },
+                { v: "1K+", l: "CLIENTS" },
+                { v: "5★", l: "RATED" },
+              ].map((s) => (
+                <div key={s.l} className="glass rounded-2xl px-3 py-3 text-center">
+                  <p className="font-heading text-2xl md:text-3xl text-foreground leading-none">{s.v}</p>
+                  <p className="text-[10px] tracking-[0.25em] text-muted-foreground mt-1.5">{s.l}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
 
-        {/* Side text */}
+        {/* Side vertical text */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -113,11 +126,26 @@ const Index = () => (
           className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block"
         >
           <p
-            className="font-heading text-xs tracking-[0.5em] text-foreground/20"
+            className="font-heading text-[10px] tracking-[0.5em] text-foreground/25"
             style={{ writingMode: "vertical-rl" }}
           >
             CLEAN CUTS • FRESH STYLE • THE CRAFT
           </p>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="absolute left-1/2 -translate-x-1/2 bottom-20 hidden md:flex flex-col items-center gap-2"
+        >
+          <span className="font-heading text-[10px] tracking-[0.4em] text-foreground/40">SCROLL</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+            className="w-px h-8 bg-gradient-to-b from-accent to-transparent"
+          />
         </motion.div>
       </div>
 
@@ -125,7 +153,7 @@ const Index = () => (
       <div className="absolute left-0 right-0 bottom-0 z-20 bg-accent py-3 overflow-hidden border-t border-background/10">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
           className="flex gap-8 whitespace-nowrap"
         >
           {Array.from({ length: 10 }).map((_, i) => (
