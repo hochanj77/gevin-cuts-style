@@ -7,70 +7,134 @@ import aboutShotOne from "@/assets/portfolio-6.jpg";
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
+    {/* Hero — Xbox / digital / ASCII */}
     <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Ambient liquid background blobs */}
+      {/* Ambient green glow */}
       <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-accent/15 blur-[120px]" />
-        <div className="absolute top-1/3 -right-40 w-[36rem] h-[36rem] rounded-full bg-foreground/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-1/4 w-[28rem] h-[28rem] rounded-full bg-accent/10 blur-[100px]" />
+        <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] rounded-full bg-accent/20 blur-[140px]" />
+        <div className="absolute top-1/3 -right-40 w-[36rem] h-[36rem] rounded-full bg-accent/10 blur-[140px]" />
+        <div className="absolute bottom-0 left-1/4 w-[28rem] h-[28rem] rounded-full bg-accent/15 blur-[120px]" />
       </div>
 
       {/* Mobile: full cover background */}
       <div className="absolute inset-0 md:hidden">
-        <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
+        <img src={heroImg} alt="Gevin cutting hair" className="w-full h-full object-cover object-top opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/40" />
       </div>
 
-      {/* Desktop: full hero composition with softer blend into the image */}
+      {/* Desktop hero composition */}
       <div className="absolute inset-0 hidden md:block">
         <img
           src={heroImg}
           alt="Gevin cutting hair"
           className="absolute right-0 top-0 h-full w-auto max-w-[70%] object-contain object-right"
+          style={{ filter: "contrast(1.05) saturate(0.85)" }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background))_32%,hsl(var(--background)/0.88)_46%,hsl(var(--background)/0.55)_62%,transparent_80%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_38%_46%,transparent_0%,transparent_28%,hsl(var(--background)/0.16)_48%,hsl(var(--background)/0.7)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-background/30" />
       </div>
 
-      {/* Decorative diagonal stripes — street style */}
-      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-[0.03] pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, white 20px, white 22px)",
-        }} />
-      </div>
+      {/* Terminal grid overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+          maskImage: "radial-gradient(ellipse at center, black 30%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 80%)",
+        }}
+      />
+
+      {/* CRT scanlines */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, hsl(var(--accent) / 0.5) 0px, hsl(var(--accent) / 0.5) 1px, transparent 1px, transparent 3px)",
+        }}
+      />
+
+      {/* ASCII art — left edge */}
+      <pre
+        aria-hidden
+        className="pointer-events-none hidden lg:block absolute left-4 top-24 text-[10px] leading-[1.1] font-mono text-accent/30 select-none whitespace-pre"
+      >{`
+ ▄████ ▓█████ ██▒   █▓ ██▓ ███▄    █
+██▒ ▀█▒▓█   ▀▓██░   █▒▓██▒ ██ ▀█   █
+▒██░▄▄▄░▒███   ▓██  █▒░▒██▒▓██  ▀█ ██▒
+░▓█  ██▓▒▓█  ▄  ▒██ █░░░██░▓██▒  ▐▌██▒
+░▒▓███▀▒░▒████▒  ▒▀█░  ░██░▒██░   ▓██░
+ ░▒   ▒ ░░ ▒░ ░  ░ ▐░  ░▓  ░ ▒░   ▒ ▒
+  ░   ░  ░ ░  ░  ░ ░░   ▒ ░░ ░░   ░ ▒░
+░ ░   ░    ░       ░░   ▒ ░   ░   ░ ░
+      ░    ░  ░     ░   ░           ░
+                   ░
+[OK] SYSTEM_READY
+[OK] BLADE_CALIBRATED
+[OK] FADE_ENGINE_v10.0
+> awaiting_client_._
+`}</pre>
+
+      {/* ASCII art — right edge */}
+      <pre
+        aria-hidden
+        className="pointer-events-none hidden xl:block absolute right-4 bottom-32 text-[10px] leading-[1.1] font-mono text-accent/25 select-none whitespace-pre text-right"
+      >{`
+╔══════════════════════════╗
+║  CHAIR_01  ▓▓▓▓▓▓▓▓░░ ON ║
+║  BLADE     ▓▓▓▓▓▓▓▓▓▓ OK ║
+║  STYLE     [SELECT_FRESH]║
+║  PING      12ms          ║
+╚══════════════════════════╝
+       ▲ ▲ ▲ ▲ ▲ ▲ ▲
+       │ │ │ │ │ │ │
+`}</pre>
 
       {/* Content */}
       <div className="relative container h-full min-h-screen flex flex-col justify-center pb-24 md:pb-28">
         <div className="max-w-2xl md:max-w-[46rem]">
-          {/* Eyebrow chip */}
+          {/* HUD chip */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 mb-8 rounded-full glass glass-sheen px-4 py-2"
+            className="inline-flex items-center gap-3 mb-8 rounded-md border border-accent/40 bg-accent/[0.06] backdrop-blur-md px-3 py-1.5 shadow-[0_0_20px_-4px_hsl(var(--accent)/0.4),inset_0_0_0_1px_hsl(var(--accent)/0.15)]"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent shadow-[0_0_8px_hsl(var(--accent))]" />
             </span>
-            <p className="font-heading text-accent text-[10px] md:text-xs tracking-[0.35em]">
-              HAIRSTYLIST · CREATIVE · EST. 2014
+            <p className="font-mono text-accent text-[10px] md:text-xs tracking-[0.3em]">
+              [ ONLINE ] · GEVIN.exe · v10.0
             </p>
           </motion.div>
+
+          {/* Coordinates line */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-mono text-[10px] md:text-xs text-accent/60 tracking-widest mb-3"
+          >
+            {">"} LOAD HERO.module ░░░░░░░░░░ 100%
+          </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="font-heading text-7xl sm:text-8xl md:text-[8.5rem] lg:text-[11rem] font-bold leading-[0.82] tracking-tight text-foreground"
-            style={{ textShadow: "0 4px 40px hsl(0 0% 0% / 0.6)" }}
+            style={{ textShadow: "0 0 30px hsl(var(--accent) / 0.25), 0 4px 40px hsl(0 0% 0% / 0.6)" }}
           >
             STAY
             <br />
-            <span className="bg-gradient-to-br from-accent via-accent to-accent/60 bg-clip-text text-transparent">
-              FRESH.
+            <span
+              className="bg-gradient-to-br from-accent via-accent to-accent/60 bg-clip-text text-transparent"
+              style={{ filter: "drop-shadow(0 0 18px hsl(var(--accent) / 0.5))" }}
+            >
+              FRESH<span className="text-accent">_</span>
             </span>
           </motion.h1>
 
@@ -80,28 +144,36 @@ const Index = () => (
             transition={{ duration: 0.7, delay: 0.45 }}
             className="mt-8 md:mt-10"
           >
-            <p className="text-foreground/75 max-w-md text-base md:text-lg leading-relaxed font-light mb-10">
-              More than a barber — a craftsman. Precision cuts, creative styling,
-              and an experience that stays with you long after the chair.
-            </p>
+            {/* Terminal-style copy */}
+            <div className="font-mono text-xs md:text-sm text-foreground/75 max-w-md mb-10 leading-relaxed border-l-2 border-accent/60 pl-4">
+              <p>
+                <span className="text-accent">$</span> describe --craft
+              </p>
+              <p className="mt-2 text-foreground/70 font-light">
+                More than a barber — a craftsman. Precision cuts, creative styling,
+                and an experience that stays with you long after the chair.
+              </p>
+              <p className="mt-2 text-accent/80">
+                <span className="text-accent">▌</span>
+              </p>
+            </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4">
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center gap-2 font-heading text-xs md:text-sm tracking-[0.25em] rounded-full bg-accent text-accent-foreground px-8 py-4 overflow-hidden border border-accent-foreground/10 shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.6),inset_0_1px_0_0_hsl(var(--foreground)/0.2)] transition-all hover:brightness-110 hover:shadow-[0_14px_50px_-8px_hsl(var(--accent)/0.7),inset_0_1px_0_0_hsl(var(--foreground)/0.25)]"
+                className="group relative inline-flex items-center gap-2 font-mono text-xs md:text-sm tracking-[0.2em] rounded-md bg-accent text-accent-foreground px-7 py-3.5 overflow-hidden border border-accent shadow-[0_0_30px_-4px_hsl(var(--accent)/0.7),inset_0_1px_0_0_hsl(var(--foreground)/0.2)] transition-all hover:brightness-110 hover:shadow-[0_0_45px_-2px_hsl(var(--accent)/0.9)]"
               >
-                <span className="relative z-10">BOOK NOW</span>
-                <span className="relative z-10 transition-transform group-hover:translate-x-1">→</span>
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-foreground/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <span className="relative z-10">[A] BOOK_NOW</span>
+                <span className="relative z-10 transition-transform group-hover:translate-x-1">▶</span>
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-foreground/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </Link>
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 font-heading text-xs md:text-sm tracking-[0.25em] rounded-full glass glass-sheen text-foreground px-8 py-4 hover:text-accent hover:border-accent/40 transition-all"
+                className="inline-flex items-center gap-2 font-mono text-xs md:text-sm tracking-[0.2em] rounded-md border border-accent/40 bg-accent/[0.04] backdrop-blur-md text-foreground px-7 py-3.5 hover:text-accent hover:border-accent hover:bg-accent/[0.08] hover:shadow-[0_0_24px_-6px_hsl(var(--accent)/0.5)] transition-all"
               >
-                VIEW WORK
+                [B] VIEW_WORK
               </Link>
             </div>
-
           </motion.div>
         </div>
 
@@ -113,10 +185,10 @@ const Index = () => (
           className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block"
         >
           <p
-            className="font-heading text-[10px] tracking-[0.5em] text-foreground/25"
+            className="font-mono text-[10px] tracking-[0.5em] text-accent/40"
             style={{ writingMode: "vertical-rl" }}
           >
-            CLEAN CUTS • FRESH STYLE • THE CRAFT
+            CLEAN_CUTS // FRESH_STYLE // THE_CRAFT
           </p>
         </motion.div>
 
@@ -127,7 +199,7 @@ const Index = () => (
           transition={{ delay: 1.2, duration: 0.6 }}
           className="absolute left-1/2 -translate-x-1/2 bottom-20 hidden md:flex flex-col items-center gap-2"
         >
-          <span className="font-heading text-[10px] tracking-[0.4em] text-foreground/40">SCROLL</span>
+          <span className="font-mono text-[10px] tracking-[0.4em] text-accent/60">▼ SCROLL ▼</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
@@ -144,8 +216,8 @@ const Index = () => (
           className="flex gap-8 whitespace-nowrap"
         >
           {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="font-heading text-accent-foreground text-sm tracking-[0.3em] flex items-center gap-8">
-              TIMELESS STYLE <span className="text-accent-foreground/40">✦</span> FRESH FADES <span className="text-accent-foreground/40">✦</span> CLEAN CUTS <span className="text-accent-foreground/40">✦</span>
+            <span key={i} className="font-mono text-accent-foreground text-sm tracking-[0.3em] flex items-center gap-8">
+              {">"} TIMELESS_STYLE <span className="text-accent-foreground/50">::</span> FRESH_FADES <span className="text-accent-foreground/50">::</span> CLEAN_CUTS <span className="text-accent-foreground/50">::</span>
             </span>
           ))}
         </motion.div>
