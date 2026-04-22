@@ -222,7 +222,7 @@ const About = () => (
             className="md:col-span-5"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <img src={detail3} alt="Consultation" className="w-full h-full object-cover rounded-xl" />
+              <SmoothImage src={detail3} alt="Consultation" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
             </div>
           </motion.div>
           <motion.div
