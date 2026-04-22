@@ -198,7 +198,7 @@ const About = () => (
           className="relative rounded-3xl overflow-hidden glass glass-sheen p-2"
         >
           <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden">
-            <img src={wide} alt="At work" className="w-full h-full object-cover" />
+            <SmoothImage src={wide} alt="At work" wrapperClassName="w-full h-full" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
             <div className="absolute inset-0 flex items-center">
               <div className="max-w-xl px-6 md:px-12 lg:px-16">
