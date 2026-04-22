@@ -114,19 +114,11 @@ const Index = () => (
             transition={{ duration: 0.7, delay: 0.45 }}
             className="mt-8 md:mt-10"
           >
-            {/* Terminal-style copy */}
-            <div className="font-mono text-xs md:text-sm text-foreground/75 max-w-md mb-10 leading-relaxed border-l-2 border-accent/60 pl-4">
-              <p>
-                <span className="text-accent">$</span> describe --craft
-              </p>
-              <p className="mt-2 text-foreground/70 font-light">
-                More than a barber — a craftsman. Precision cuts, creative styling,
-                and an experience that stays with you long after the chair.
-              </p>
-              <p className="mt-2 text-accent/80">
-                <span className="text-accent">▌</span>
-              </p>
-            </div>
+            {/* Tagline */}
+            <p className="text-foreground/75 max-w-md text-base md:text-lg leading-relaxed font-light mb-10">
+              More than a barber — a craftsman. Precision cuts, creative styling,
+              and an experience that stays with you long after the chair.
+            </p>
 
             <div className="flex flex-wrap gap-3 md:gap-4">
               <Link
