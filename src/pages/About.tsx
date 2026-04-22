@@ -121,7 +121,7 @@ const About = () => (
             className="md:col-span-5"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <img src={detail1} alt="Detail of a fade" className="w-full h-full object-cover rounded-xl" />
+              <SmoothImage src={detail1} alt="Detail of a fade" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
             </div>
           </motion.div>
           <motion.div
