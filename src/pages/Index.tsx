@@ -91,13 +91,13 @@ const Index = () => (
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/contact"
-                className="group relative font-heading text-sm tracking-[0.2em] bg-accent text-accent-foreground px-10 py-4 overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
+                className="group relative font-heading text-sm tracking-[0.2em] rounded-xl bg-gradient-to-r from-accent via-accent to-accent/80 text-accent-foreground px-10 py-4 overflow-hidden border border-accent/40 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.25)] transition-all hover:shadow-[0_8px_30px_-4px_hsl(var(--accent)/0.5)] hover:brightness-110"
               >
                 <span className="relative z-10">BOOK NOW</span>
               </Link>
               <Link
                 to="/portfolio"
-                className="font-heading text-sm tracking-[0.2em] border border-foreground/40 text-foreground px-10 py-4 hover:border-accent hover:text-accent transition-all backdrop-blur-sm"
+                className="font-heading text-sm tracking-[0.2em] rounded-xl border border-foreground/20 bg-foreground/[0.05] backdrop-blur-xl text-foreground px-10 py-4 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.1)] hover:border-accent/60 hover:text-accent hover:bg-foreground/[0.08] transition-all"
               >
                 VIEW WORK
               </Link>
@@ -181,11 +181,12 @@ const Index = () => (
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="overflow-hidden border border-border bg-secondary rounded-lg">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-accent/20 via-primary/10 to-transparent blur-2xl" />
+            <div className="overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl p-2 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)]">
               <img
                 src={aboutShotOne}
                 alt="Gevin crafting a braided fade"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover rounded-xl"
                 loading="lazy"
               />
             </div>

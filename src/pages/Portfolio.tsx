@@ -50,13 +50,13 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="aspect-square overflow-hidden cursor-pointer group relative rounded-lg"
+                className="aspect-square overflow-hidden cursor-pointer group relative rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl p-1 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)] hover:border-accent/40 transition-all"
                 onClick={() => setSelected(src)}
               >
                 <motion.img
                   src={src}
                   alt={`Haircut ${i + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-110"
                   whileHover={{ filter: "brightness(1.1)" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
