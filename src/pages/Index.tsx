@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero.png";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
+
+const Hero3D = lazy(() => import("@/components/Hero3D"));
 
 
 const Index = () => (
@@ -27,12 +30,24 @@ const Index = () => (
         <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-transparent to-background/20" />
       </div>
 
+      {/* 3D barber pole + ambient sparkles */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, delay: 0.3 }}
+        className="absolute inset-0 pointer-events-none z-[1]"
+      >
+        <Suspense fallback={null}>
+          <Hero3D />
+        </Suspense>
+      </motion.div>
+
       {/* Decorative vertical line */}
       <motion.div
         initial={{ height: 0 }}
         animate={{ height: "40%" }}
         transition={{ duration: 1.2, delay: 0.5 }}
-        className="absolute left-8 md:left-16 top-24 w-px bg-accent hidden md:block"
+        className="absolute left-8 md:left-16 top-24 w-px bg-accent hidden md:block z-[2]"
       />
 
       {/* Decorative diagonal stripes — street style */}
@@ -43,7 +58,7 @@ const Index = () => (
       </div>
 
       {/* Content */}
-      <div className="relative container h-full flex flex-col justify-center">
+      <div className="relative container h-full flex flex-col justify-center z-[3]">
         <div className="max-w-2xl md:max-w-[44rem] md:rounded-r-[2rem] md:bg-background/12 md:backdrop-blur-[2px] md:pr-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
