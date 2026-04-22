@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Scissors, Award, Users, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
+import SmoothImage from "@/components/SmoothImage";
 import { Button } from "@/components/ui/button";
 
 import portrait from "@/assets/portfolio-2.jpg";
