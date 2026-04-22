@@ -105,7 +105,7 @@ const Index = () => (
               className="bg-gradient-to-br from-accent via-accent to-accent/60 bg-clip-text text-transparent"
               style={{ filter: "drop-shadow(0 0 18px hsl(var(--accent) / 0.5))" }}
             >
-              FRESH<span className="text-accent animate-[blink_1.1s_steps(2,end)_infinite]">_</span>
+              FRESH
             </span>
           </motion.h1>
 
