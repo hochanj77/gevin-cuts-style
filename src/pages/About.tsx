@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Scissors, Award, Users, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import SmoothImage from "@/components/SmoothImage";
+import ImageShuffle from "@/components/ImageShuffle";
 import { Button } from "@/components/ui/button";
 
 import portrait from "@/assets/portfolio-2.jpg";
@@ -10,6 +11,34 @@ import detail1 from "@/assets/portfolio-7.jpg";
 import detail2 from "@/assets/portfolio-11.jpg";
 import detail3 from "@/assets/portfolio-15.jpg";
 import wide from "@/assets/portfolio-9.jpg";
+import alt1 from "@/assets/portfolio-3.jpg";
+import alt2 from "@/assets/portfolio-5.jpg";
+import alt3 from "@/assets/portfolio-8.jpg";
+import alt4 from "@/assets/portfolio-12.jpg";
+import alt5 from "@/assets/portfolio-14.jpg";
+import alt6 from "@/assets/portfolio-17.jpg";
+
+const portraitSet = [
+  { src: portrait, alt: "Gevin at work" },
+  { src: alt1, alt: "Portrait — fresh fade" },
+  { src: alt2, alt: "Portrait — clean line up" },
+];
+const block1Set = [
+  { src: detail1, alt: "Detail of a fade" },
+  { src: alt3, alt: "Precision blade work" },
+  { src: alt4, alt: "Finished cut" },
+];
+const block2Set = [
+  { src: detail2, alt: "Inside the shop" },
+  { src: alt5, alt: "The chair" },
+  { src: alt6, alt: "The shop atmosphere" },
+];
+const block3Set = [
+  { src: detail3, alt: "Consultation" },
+  { src: alt2, alt: "Styling moment" },
+  { src: alt1, alt: "Final touches" },
+];
+
 
 const stats = [
   { icon: Scissors, value: "10+", label: "Years Cutting" },
