@@ -150,7 +150,7 @@ const About = () => (
             className="md:col-span-5"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <SmoothImage src={detail1} alt="Detail of a fade" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
+              <ImageShuffle images={block1Set} interval={4600} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
             </div>
           </motion.div>
           <motion.div
@@ -213,7 +213,7 @@ const About = () => (
             className="md:col-span-5 md:order-2 order-1"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <SmoothImage src={detail2} alt="Inside the shop" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
+              <ImageShuffle images={block2Set} interval={5200} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
             </div>
           </motion.div>
         </div>
@@ -251,7 +251,7 @@ const About = () => (
             className="md:col-span-5"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <SmoothImage src={detail3} alt="Consultation" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
+              <ImageShuffle images={block3Set} interval={4800} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
             </div>
           </motion.div>
           <motion.div
