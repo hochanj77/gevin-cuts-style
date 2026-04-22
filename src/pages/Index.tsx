@@ -6,7 +6,9 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import heroImg from "@/assets/hero.png";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
 
-const Index = () => (
+const Index = () => {
+  const isMobile = useIsMobile();
+  return (
   <Layout>
     {/* Hero — Liquid Glass */}
     <section className="relative min-h-screen overflow-hidden bg-background">
@@ -114,9 +116,8 @@ const Index = () => (
       <div className="absolute left-0 right-0 bottom-0 z-20 bg-accent py-3 overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-          className="flex gap-8 whitespace-nowrap md:[animation-duration:30s]"
-          style={{}}
+          transition={{ repeat: Infinity, duration: isMobile ? 12 : 30, ease: "linear" }}
+          className="flex gap-8 whitespace-nowrap"
         >
           {Array.from({ length: 10 }).map((_, i) => (
             <span
@@ -190,6 +191,7 @@ const Index = () => (
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default Index;
