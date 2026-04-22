@@ -95,12 +95,12 @@ const About = () => (
             className="lg:col-span-5 relative"
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass glass-sheen p-2">
-              <SmoothImage
-                src={portrait}
-                alt="Gevin at work"
-                loading="eager"
-                wrapperClassName="w-full h-full rounded-2xl"
-                className="w-full h-full object-cover rounded-2xl"
+              <ImageShuffle
+                images={portraitSet}
+                eager
+                interval={5000}
+                className="w-full h-full rounded-2xl"
+                imgClassName="rounded-2xl"
               />
               <div className="absolute inset-2 rounded-2xl bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6">
