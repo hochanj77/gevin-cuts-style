@@ -102,19 +102,6 @@ const Index = () => (
               </Link>
             </div>
 
-            {/* Mini stat row */}
-            <div className="mt-12 md:mt-14 grid grid-cols-3 max-w-md gap-4">
-              {[
-                { v: "10+", l: "YRS" },
-                { v: "1K+", l: "CLIENTS" },
-                { v: "5★", l: "RATED" },
-              ].map((s) => (
-                <div key={s.l} className="glass rounded-2xl px-3 py-3 text-center">
-                  <p className="font-heading text-2xl md:text-3xl text-foreground leading-none">{s.v}</p>
-                  <p className="text-[10px] tracking-[0.25em] text-muted-foreground mt-1.5">{s.l}</p>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
 
