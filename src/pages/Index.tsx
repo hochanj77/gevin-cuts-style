@@ -114,11 +114,15 @@ const Index = () => (
             transition={{ duration: 0.7, delay: 0.45 }}
             className="mt-8 md:mt-10"
           >
-            {/* Tagline */}
-            <p className="text-foreground/75 max-w-md text-base md:text-lg leading-relaxed font-light mb-10">
-              More than a barber — a craftsman. Precision cuts, creative styling,
-              and an experience that stays with you long after the chair.
-            </p>
+            {/* Tagline — terminal typewriter */}
+            <div className="max-w-md mb-10 font-mono text-sm md:text-base text-foreground/85 leading-relaxed border-l-2 border-accent/60 pl-4">
+              <Typewriter
+                text="More than a barber — a craftsman. Precision cuts, creative styling, and an experience that stays with you long after the chair."
+                speed={24}
+                startDelay={900}
+                cursorClassName="text-accent"
+              />
+            </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4">
               <Link
