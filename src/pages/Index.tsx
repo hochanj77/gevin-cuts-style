@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import Typewriter from "@/components/Typewriter";
 import AsciiLoader from "@/components/AsciiLoader";
+import SmoothImage from "@/components/SmoothImage";
 import heroImg from "@/assets/hero.png";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
 
@@ -239,11 +240,11 @@ const Index = () => (
           >
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-accent/20 via-primary/10 to-transparent blur-2xl" />
             <div className="overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl p-2 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)]">
-              <img
+              <SmoothImage
                 src={aboutShotOne}
                 alt="Gevin crafting a braided fade"
+                wrapperClassName="h-full w-full rounded-xl"
                 className="h-full w-full object-cover rounded-xl"
-                loading="lazy"
               />
             </div>
           </motion.div>

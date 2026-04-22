@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Layout from "@/components/Layout";
+import SmoothImage from "@/components/SmoothImage";
 
 import p1 from "@/assets/portfolio-1.jpg";
 import p2 from "@/assets/portfolio-2.jpg";
@@ -53,11 +54,11 @@ const Portfolio = () => {
                 className="aspect-square overflow-hidden cursor-pointer group relative rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl p-1 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)] hover:border-accent/40 transition-all"
                 onClick={() => setSelected(src)}
               >
-                <motion.img
+                <SmoothImage
                   src={src}
                   alt={`Haircut ${i + 1}`}
+                  wrapperClassName="w-full h-full rounded-xl"
                   className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-110"
-                  whileHover={{ filter: "brightness(1.1)" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <motion.div

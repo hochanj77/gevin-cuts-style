@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Scissors, Award, Users, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
+import SmoothImage from "@/components/SmoothImage";
 import { Button } from "@/components/ui/button";
 
 import portrait from "@/assets/portfolio-2.jpg";
@@ -65,9 +66,11 @@ const About = () => (
             className="lg:col-span-5 relative"
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass glass-sheen p-2">
-              <img
+              <SmoothImage
                 src={portrait}
                 alt="Gevin at work"
+                loading="eager"
+                wrapperClassName="w-full h-full rounded-2xl"
                 className="w-full h-full object-cover rounded-2xl"
               />
               <div className="absolute inset-2 rounded-2xl bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
@@ -118,7 +121,7 @@ const About = () => (
             className="md:col-span-5"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <img src={detail1} alt="Detail of a fade" className="w-full h-full object-cover rounded-xl" />
+              <SmoothImage src={detail1} alt="Detail of a fade" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
             </div>
           </motion.div>
           <motion.div
@@ -181,7 +184,7 @@ const About = () => (
             className="md:col-span-5 md:order-2 order-1"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <img src={detail2} alt="Inside the shop" className="w-full h-full object-cover rounded-xl" />
+              <SmoothImage src={detail2} alt="Inside the shop" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
             </div>
           </motion.div>
         </div>
@@ -195,7 +198,7 @@ const About = () => (
           className="relative rounded-3xl overflow-hidden glass glass-sheen p-2"
         >
           <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden">
-            <img src={wide} alt="At work" className="w-full h-full object-cover" />
+            <SmoothImage src={wide} alt="At work" wrapperClassName="w-full h-full" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
             <div className="absolute inset-0 flex items-center">
               <div className="max-w-xl px-6 md:px-12 lg:px-16">
@@ -219,7 +222,7 @@ const About = () => (
             className="md:col-span-5"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <img src={detail3} alt="Consultation" className="w-full h-full object-cover rounded-xl" />
+              <SmoothImage src={detail3} alt="Consultation" wrapperClassName="w-full h-full rounded-xl" className="w-full h-full object-cover rounded-xl" />
             </div>
           </motion.div>
           <motion.div
