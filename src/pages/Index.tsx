@@ -113,8 +113,9 @@ const Index = () => (
       <div className="absolute left-0 right-0 bottom-0 z-20 bg-accent py-3 overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-          className="flex gap-8 whitespace-nowrap"
+          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          className="flex gap-8 whitespace-nowrap md:[animation-duration:30s]"
+          style={{}}
         >
           {Array.from({ length: 10 }).map((_, i) => (
             <span
