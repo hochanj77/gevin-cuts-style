@@ -9,6 +9,7 @@ import aboutShotOne from "@/assets/portfolio-6.jpg";
 
 const Index = () => (
   <Layout>
+    <AsciiLoader />
     {/* Hero — Xbox / digital / ASCII */}
     <section className="relative min-h-screen overflow-hidden bg-background">
       {/* Ambient green glow */}
