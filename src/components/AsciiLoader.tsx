@@ -96,10 +96,6 @@ const AsciiLoader = () => {
 
             {/* Body */}
             <div className="px-5 sm:px-8 py-6 sm:py-8 font-mono text-accent">
-              <p className="text-[10px] sm:text-xs text-accent/70 mb-3">
-                <span className="text-accent">$</span> ./boot --user=gevin
-              </p>
-
               <pre
                 className="text-accent text-[7px] xs:text-[8px] sm:text-[10px] md:text-xs leading-[1.05] whitespace-pre select-none"
                 style={{
