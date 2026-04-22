@@ -73,7 +73,6 @@ const Index = () => (
                    ░
 [OK] SYSTEM_READY
 [OK] BLADE_CALIBRATED
-[OK] FADE_ENGINE_v10.0
 > awaiting_client_._
 `}</pre>
 
