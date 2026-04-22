@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import Typewriter from "@/components/Typewriter";
 import AsciiLoader from "@/components/AsciiLoader";
+import SmoothImage from "@/components/SmoothImage";
 import heroImg from "@/assets/hero.png";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
 
