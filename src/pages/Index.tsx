@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import Typewriter from "@/components/Typewriter";
+import AsciiLoader from "@/components/AsciiLoader";
 import heroImg from "@/assets/hero.png";
 import aboutShotOne from "@/assets/portfolio-6.jpg";
 
 
 const Index = () => (
   <Layout>
+    <AsciiLoader />
     {/* Hero — Xbox / digital / ASCII */}
     <section className="relative min-h-screen overflow-hidden bg-background">
       {/* Ambient green glow */}
