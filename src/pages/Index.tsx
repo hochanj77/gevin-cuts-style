@@ -7,16 +7,23 @@ import aboutShotOne from "@/assets/portfolio-6.jpg";
 
 const Index = () => (
   <Layout>
-    {/* Hero — Editorial / Professional */}
+    {/* Hero — Liquid Glass */}
     <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Mobile background */}
+      {/* Ambient liquid color field */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[44rem] h-[44rem] rounded-full bg-accent/20 blur-[140px]" />
+        <div className="absolute top-1/3 -right-40 w-[40rem] h-[40rem] rounded-full bg-foreground/10 blur-[140px]" />
+        <div className="absolute bottom-0 left-1/4 w-[32rem] h-[32rem] rounded-full bg-accent/10 blur-[120px]" />
+      </div>
+
+      {/* Mobile background — centered */}
       <div className="absolute inset-0 md:hidden">
         <img
           src={heroImg}
           alt="Gevin cutting hair"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-[50%_25%] opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
       </div>
 
       {/* Desktop hero composition */}
@@ -25,32 +32,32 @@ const Index = () => (
           src={heroImg}
           alt="Gevin cutting hair"
           className="absolute right-0 top-0 h-full w-auto max-w-[70%] object-contain object-right"
-          style={{ filter: "contrast(1.02) saturate(0.9)" }}
+          style={{ filter: "contrast(1.02) saturate(0.95)" }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background))_34%,hsl(var(--background)/0.9)_48%,hsl(var(--background)/0.55)_64%,transparent_82%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-background/30" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--background))_0%,hsl(var(--background)/0.92)_30%,hsl(var(--background)/0.65)_50%,hsl(var(--background)/0.3)_70%,transparent_88%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
       </div>
 
       {/* Content */}
       <div className="relative container h-full min-h-screen flex flex-col justify-center pb-24 md:pb-28">
-        <div className="max-w-2xl md:max-w-[46rem]">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-8"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="glass glass-sheen rounded-3xl p-7 sm:p-10 md:p-12 max-w-2xl md:max-w-[44rem]"
+        >
+          <div className="flex items-center gap-3 mb-7">
             <span className="w-10 h-px bg-accent/70" />
             <p className="font-heading text-accent text-xs tracking-[0.4em]">
               MASTER BARBER · NYC
             </p>
-          </motion.div>
+          </div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-7xl sm:text-8xl md:text-[8.5rem] lg:text-[11rem] font-bold leading-[0.85] tracking-tight text-foreground"
+            className="font-heading text-6xl sm:text-7xl md:text-[7.5rem] lg:text-[9.5rem] font-bold leading-[0.85] tracking-tight text-foreground"
           >
             STAY
             <br />
@@ -58,12 +65,12 @@ const Index = () => (
           </motion.h1>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-8 md:mt-10"
+            className="mt-7 md:mt-9"
           >
-            <p className="max-w-md mb-10 text-base md:text-lg text-foreground/80 leading-relaxed">
+            <p className="max-w-md mb-9 text-base md:text-lg text-foreground/85 leading-relaxed">
               More than a barber — a craftsman. Precision cuts, creative styling,
               and an experience that stays with you long after the chair.
             </p>
@@ -71,20 +78,20 @@ const Index = () => (
             <div className="flex flex-wrap gap-3 md:gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 font-heading text-sm tracking-[0.25em] bg-accent text-accent-foreground px-8 py-4 hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center gap-2 font-heading text-sm tracking-[0.25em] rounded-full bg-accent text-accent-foreground px-8 py-4 hover:bg-accent/90 transition-colors shadow-[0_10px_30px_-10px_hsl(var(--accent)/0.6)]"
               >
                 BOOK NOW
                 <span aria-hidden>→</span>
               </Link>
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 font-heading text-sm tracking-[0.25em] border border-foreground/30 text-foreground px-8 py-4 hover:border-accent hover:text-accent transition-colors"
+                className="glass inline-flex items-center gap-2 font-heading text-sm tracking-[0.25em] rounded-full text-foreground px-8 py-4 hover:text-accent hover:border-accent/50 transition-colors"
               >
                 VIEW WORK
               </Link>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Side vertical text */}
         <motion.div
