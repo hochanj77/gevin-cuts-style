@@ -44,7 +44,7 @@ const Index = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="glass glass-sheen rounded-3xl p-7 sm:p-10 md:p-12 max-w-2xl md:max-w-[44rem]"
+          className="max-w-2xl md:max-w-[44rem]"
         >
           <div className="flex items-center gap-3 mb-7">
             <span className="w-10 h-px bg-accent/70" />
