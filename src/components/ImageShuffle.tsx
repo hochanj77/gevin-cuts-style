@@ -37,20 +37,21 @@ const ImageShuffle = ({
 
   return (
     <div className={cn("relative overflow-hidden", className)}>
-      <AnimatePresence mode="sync" initial={false}>
+      {images.map((img, i) => (
         <motion.img
-          key={index}
-          src={images[index].src}
-          alt={images[index].alt}
-          loading={eager ? "eager" : "lazy"}
+          key={img.src}
+          src={img.src}
+          alt={img.alt}
+          loading={eager && i === 0 ? "eager" : "lazy"}
           decoding="async"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -40 }}
-          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          draggable={false}
+          initial={false}
+          animate={{ opacity: i === index ? 1 : 0 }}
+          transition={{ duration: 1.4, ease: [0.4, 0, 0.2, 1] }}
+          style={{ willChange: "opacity", backfaceVisibility: "hidden", transform: "translateZ(0)" }}
           className={cn("absolute inset-0 w-full h-full object-cover", imgClassName)}
         />
-      </AnimatePresence>
+      ))}
     </div>
   );
 };
