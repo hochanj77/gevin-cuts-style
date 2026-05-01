@@ -32,7 +32,7 @@ const Index = () => {
           <div className="absolute top-6 left-6 flex items-center gap-3 rounded-full bg-background/60 backdrop-blur-md border border-foreground/10 px-3 py-1.5">
             <span className="w-6 h-px bg-accent" />
             <p className="font-heading text-accent text-[10px] tracking-[0.4em]">
-              MASTER BARBER · NYC
+              NYC · NJ
             </p>
           </div>
         </div>
@@ -106,7 +106,7 @@ const Index = () => {
           <div className="flex items-center gap-3 mb-7">
             <span className="w-10 h-px bg-accent/70" />
             <p className="font-heading text-accent text-xs tracking-[0.4em]">
-              MASTER BARBER · NYC
+              NYC · NJ
             </p>
           </div>
 
