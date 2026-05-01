@@ -56,60 +56,43 @@ const About = () => (
       <div className="absolute bottom-0 left-1/3 w-[30rem] h-[30rem] rounded-full bg-accent/5 blur-[100px]" />
     </div>
 
-    {/* HERO */}
-    <section className="relative pt-12 md:pt-20 pb-16 md:pb-24 overflow-hidden">
-      <div className="container max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left: huge typographic statement */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 relative"
-          >
-            <p className="font-heading text-xs md:text-sm tracking-[0.3em] text-accent mb-6">
-              ABOUT — EST. 2014
+    {/* HERO — typographic, no image */}
+    <section className="relative pt-12 md:pt-20 pb-12 md:pb-16 overflow-hidden">
+      <div className="container max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="font-heading text-xs md:text-sm tracking-[0.3em] text-accent mb-6">
+            ABOUT — EST. 2014
+          </p>
+          <h1 className="font-heading font-bold leading-[0.85] tracking-tight">
+            <span className="block text-7xl md:text-9xl lg:text-[10rem] text-foreground">GEVIN</span>
+          </h1>
+          <div className="mt-8 flex items-center gap-4 mb-10">
+            <div className="w-16 h-px bg-accent" />
+            <p className="text-sm text-muted-foreground tracking-widest uppercase">
+              Hairstylist · Creative · Confidant
             </p>
-            <h1 className="font-heading font-bold leading-[0.85] tracking-tight">
-              <span className="block text-6xl md:text-8xl lg:text-[9rem] text-foreground">GEVIN</span>
-              <span className="block text-4xl md:text-6xl lg:text-7xl text-muted-foreground mt-2">
-                THE CRAFT
-              </span>
-              <span className="block text-2xl md:text-4xl lg:text-5xl text-accent mt-2 italic font-normal">
-                & the chair.
-              </span>
-            </h1>
-            <div className="mt-8 flex items-center gap-4">
-              <div className="w-16 h-px bg-accent" />
-              <p className="text-sm text-muted-foreground tracking-widest uppercase">
-                Hairstylist · Creative · Confidant
-              </p>
-            </div>
-          </motion.div>
+          </div>
 
-          {/* Right: portrait in glass frame */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="lg:col-span-5 relative"
-          >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass glass-sheen p-2">
-              <ImageShuffle
-                images={portraitSet}
-                eager
-                interval={5000}
-                className="w-full h-full rounded-2xl"
-                imgClassName="rounded-2xl"
-              />
-              <div className="absolute inset-2 rounded-2xl bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="font-heading text-xs tracking-[0.25em] text-accent mb-1">SINCE 2014</p>
-                <p className="font-heading text-2xl text-foreground">A DECADE BEHIND THE CHAIR</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          <p className="font-heading text-xs tracking-[0.3em] text-accent mb-4">01 — THE CRAFT</p>
+          <h2 className="font-heading text-3xl md:text-5xl text-foreground mb-6 leading-tight">
+            MORE THAN A HAIRCUT.<br />
+            <span className="text-muted-foreground">An experience.</span>
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
+            <p>
+              I'm a full-time hairstylist and creative. I take pride in my craft and in delivering
+              the most optimal result for every client — what truly suits them, not just a trend.
+            </p>
+            <p>
+              I cut people who appreciate the passion behind the work and who carry that same
+              positive outlook on life. I'm more than a barber — I'm a friend and an ear to my clients.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
 
