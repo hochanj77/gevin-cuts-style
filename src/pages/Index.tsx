@@ -22,7 +22,7 @@ const Index = () => {
       {/* MOBILE — editorial split layout */}
       <div className="md:hidden flex flex-col">
         {/* Top: framed image */}
-        <div className="relative h-[58vh] w-full overflow-hidden">
+        <div className="relative h-[38vh] w-full overflow-hidden">
           <img
             src={heroImg}
             alt="Gevin cutting hair"
@@ -38,12 +38,12 @@ const Index = () => {
         </div>
 
         {/* Bottom: copy on solid bg */}
-        <div className="container pt-8 pb-28">
+        <div className="container pt-6 pb-28">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading text-7xl font-bold leading-[0.85] tracking-tight text-foreground"
+            className="font-heading text-6xl font-bold leading-[0.85] tracking-tight text-foreground"
           >
             STAY
             <br />
@@ -54,7 +54,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-base text-foreground/80 leading-relaxed max-w-md"
+            className="mt-4 text-sm text-foreground/80 leading-relaxed max-w-md"
           >
             More than a barber — a craftsman. Precision cuts, creative styling,
             and an experience that stays with you long after the chair.
@@ -64,7 +64,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-8 flex flex-wrap gap-3"
+            className="mt-5 flex flex-wrap gap-3"
           >
             <Link
               to="/contact"
