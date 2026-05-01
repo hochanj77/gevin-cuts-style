@@ -123,43 +123,16 @@ const About = () => (
     {/* STORY — image + text alternating */}
     <section className="py-16 md:py-24">
       <div className="container max-w-6xl space-y-20 md:space-y-28">
-        {/* Block 1 */}
-        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="md:col-span-5"
-          >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <ImageShuffle images={block1Set} interval={4600} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="md:col-span-7"
-          >
-            <p className="font-heading text-xs tracking-[0.3em] text-accent mb-4">01 — THE CRAFT</p>
-            <h2 className="font-heading text-3xl md:text-5xl text-foreground mb-6 leading-tight">
-              MORE THAN A HAIRCUT.<br />
-              <span className="text-muted-foreground">An experience.</span>
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                I'm a full-time hairstylist and creative. I take pride in my craft and in delivering
-                the most optimal result for every client — what truly suits them, not just a trend.
-              </p>
-              <p>
-                I cut people who appreciate the passion behind the work and who carry that same
-                positive outlook on life. I'm more than a barber — I'm a friend and an ear to my clients.
-              </p>
-            </div>
-          </motion.div>
-        </div>
+        {/* Block 1 — replaced by image showcase since text moved to hero */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden glass p-1.5"
+        >
+          <ImageShuffle images={block1Set} interval={4600} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
+        </motion.div>
 
         {/* Block 2 — reversed */}
         <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
