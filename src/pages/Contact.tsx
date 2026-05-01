@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Instagram } from "lucide-react";
+import { MapPin, Instagram } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import Layout from "@/components/Layout";
 
@@ -46,7 +46,6 @@ const Contact = () => {
             >
               {[
                 { Icon: MapPin, title: "LOCATION", body: <>The Shop Barbershop<br />Est. 2003</> },
-                { Icon: Phone, title: "PHONE", body: <>Contact for appointments</> },
                 {
                   Icon: Instagram,
                   title: "SOCIAL",
