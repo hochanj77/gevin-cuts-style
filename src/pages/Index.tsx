@@ -96,7 +96,7 @@ const Index = () => {
       </div>
 
       {/* Content */}
-      <div className="relative container h-full min-h-screen flex flex-col justify-center pb-24 md:pb-28">
+      <div className="relative container h-full min-h-screen hidden md:flex flex-col justify-center pb-24 md:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
