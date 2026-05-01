@@ -30,7 +30,12 @@ jobs:
         run: npm install
 
       - name: Build
+        env:
+          GITHUB_PAGES_BASE: /${{ github.event.repository.name }}/
         run: npm run build
+
+      - name: Add SPA 404 fallback
+        run: cp dist/index.html dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
