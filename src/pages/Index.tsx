@@ -11,25 +11,79 @@ const Index = () => {
   return (
   <Layout>
     {/* Hero — Liquid Glass */}
-    <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Ambient liquid color field */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <section className="relative md:min-h-screen overflow-hidden bg-background">
+      {/* Ambient liquid color field — desktop only */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
         <div className="absolute -top-40 -left-40 w-[44rem] h-[44rem] rounded-full bg-accent/20 blur-[140px]" />
         <div className="absolute top-1/3 -right-40 w-[40rem] h-[40rem] rounded-full bg-foreground/10 blur-[140px]" />
         <div className="absolute bottom-0 left-1/4 w-[32rem] h-[32rem] rounded-full bg-accent/10 blur-[120px]" />
       </div>
 
-      {/* Mobile background — centered */}
-      <div className="absolute inset-0 md:hidden">
-        <img
-          src={heroImg}
-          alt="Gevin cutting hair"
-          className="w-full h-full object-cover object-[50%_25%] opacity-90"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
+      {/* MOBILE — editorial split layout */}
+      <div className="md:hidden flex flex-col">
+        {/* Top: framed image */}
+        <div className="relative h-[58vh] w-full overflow-hidden">
+          <img
+            src={heroImg}
+            alt="Gevin cutting hair"
+            className="w-full h-full object-cover object-[50%_22%]"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
+          <div className="absolute top-6 left-6 flex items-center gap-3 rounded-full bg-background/60 backdrop-blur-md border border-foreground/10 px-3 py-1.5">
+            <span className="w-6 h-px bg-accent" />
+            <p className="font-heading text-accent text-[10px] tracking-[0.4em]">
+              MASTER BARBER · NYC
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom: copy on solid bg */}
+        <div className="container pt-8 pb-28">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="font-heading text-7xl font-bold leading-[0.85] tracking-tight text-foreground"
+          >
+            STAY
+            <br />
+            <span className="text-accent">FRESH</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-6 text-base text-foreground/80 leading-relaxed max-w-md"
+          >
+            More than a barber — a craftsman. Precision cuts, creative styling,
+            and an experience that stays with you long after the chair.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="mt-8 flex flex-wrap gap-3"
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 font-heading text-sm tracking-[0.25em] rounded-full bg-accent text-accent-foreground px-7 py-4 hover:bg-accent/90 transition-colors shadow-[0_10px_30px_-10px_hsl(var(--accent)/0.6)]"
+            >
+              BOOK NOW
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              to="/portfolio"
+              className="glass inline-flex items-center gap-2 font-heading text-sm tracking-[0.25em] rounded-full text-foreground px-7 py-4 hover:text-accent hover:border-accent/50 transition-colors"
+            >
+              VIEW WORK
+            </Link>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Desktop hero composition */}
+      {/* DESKTOP hero composition */}
       <div className="absolute inset-0 hidden md:block">
         <img
           src={heroImg}
@@ -42,7 +96,7 @@ const Index = () => {
       </div>
 
       {/* Content */}
-      <div className="relative container h-full min-h-screen flex flex-col justify-center pb-24 md:pb-28">
+      <div className="relative container h-full min-h-screen hidden md:flex flex-col justify-center pb-24 md:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
