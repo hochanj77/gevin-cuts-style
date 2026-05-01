@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Instagram } from "lucide-react";
+import { MapPin, Instagram } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import Layout from "@/components/Layout";
 
