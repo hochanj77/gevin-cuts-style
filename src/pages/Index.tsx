@@ -29,8 +29,8 @@ const Index = () => {
             className="w-full h-full object-cover object-[50%_22%]"
           />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
-          <div className="absolute top-6 left-6 flex items-center gap-3">
-            <span className="w-8 h-px bg-accent" />
+          <div className="absolute top-6 left-6 flex items-center gap-3 rounded-full bg-background/60 backdrop-blur-md border border-foreground/10 px-3 py-1.5">
+            <span className="w-6 h-px bg-accent" />
             <p className="font-heading text-accent text-[10px] tracking-[0.4em]">
               MASTER BARBER · NYC
             </p>
