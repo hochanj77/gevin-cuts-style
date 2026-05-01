@@ -123,56 +123,32 @@ const About = () => (
     {/* STORY — image + text alternating */}
     <section className="py-16 md:py-24">
       <div className="container max-w-6xl space-y-20 md:space-y-28">
-        {/* Block 1 — replaced by image showcase since text moved to hero */}
+        {/* Block 2 — text only */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden glass p-1.5"
+          className="max-w-3xl"
         >
-          <ImageShuffle images={block1Set} interval={4600} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
+          <p className="font-heading text-xs tracking-[0.3em] text-accent mb-4">02 — THE LEGACY</p>
+          <h2 className="font-heading text-3xl md:text-5xl text-foreground mb-6 leading-tight">
+            RAISED INSIDE<br />
+            <span className="text-muted-foreground">"The Shop."</span>
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              For 10 years I've been cutting at <span className="text-foreground">The Shop</span> — the
+              prestigious barbershop my father has owned since 2003. He's a celebrated celebrity barber
+              who has cut <span className="text-foreground">Jay-Z, Kanye West, Pharrell</span> and many more.
+            </p>
+            <p>
+              Guided by the best, I've developed a refined eye for hairstyling and image consulting —
+              and I've been blessed to cut celebrities, important figures, and the people from my
+              community who trust me with their look.
+            </p>
+          </div>
         </motion.div>
-
-        {/* Block 2 — reversed */}
-        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="md:col-span-7 md:order-1 order-2"
-          >
-            <p className="font-heading text-xs tracking-[0.3em] text-accent mb-4">02 — THE LEGACY</p>
-            <h2 className="font-heading text-3xl md:text-5xl text-foreground mb-6 leading-tight">
-              RAISED INSIDE<br />
-              <span className="text-muted-foreground">"The Shop."</span>
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                For 10 years I've been cutting at <span className="text-foreground">The Shop</span> — the
-                prestigious barbershop my father has owned since 2003. He's a celebrated celebrity barber
-                who has cut <span className="text-foreground">Jay-Z, Kanye West, Pharrell</span> and many more.
-              </p>
-              <p>
-                Guided by the best, I've developed a refined eye for hairstyling and image consulting —
-                and I've been blessed to cut celebrities, important figures, and the people from my
-                community who trust me with their look.
-              </p>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="md:col-span-5 md:order-2 order-1"
-          >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden glass p-1.5">
-              <ImageShuffle images={block2Set} interval={5200} className="w-full h-full rounded-xl" imgClassName="rounded-xl" />
-            </div>
-          </motion.div>
-        </div>
 
         {/* Block 3 — wide image with overlay quote */}
         <motion.div
