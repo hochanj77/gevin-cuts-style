@@ -24,7 +24,7 @@ const Index = () => {
         <img
           src={heroImg}
           alt="Gevin cutting hair"
-          className="w-full h-full object-contain object-[50%_30%] opacity-90"
+          className="w-full h-full object-cover object-[50%_25%] opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
       </div>
