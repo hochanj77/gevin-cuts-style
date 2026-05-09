@@ -62,14 +62,13 @@ const Contact = () => {
             {/* QR code card */}
             <div className="relative flex items-center gap-5 rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl px-5 py-5 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)]">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-foreground/[0.08] via-transparent to-transparent pointer-events-none" />
-              <div className="relative rounded-xl bg-background/80 backdrop-blur-md p-3 border border-foreground/10">
+              <div className="relative rounded-xl bg-white p-3 border border-foreground/10">
                 <QRCodeSVG
                   value={typeof window !== "undefined" ? window.location.href : "https://gevin-cuts-style.lovable.app/contact"}
                   size={104}
-                  bgColor="transparent"
-                  fgColor="currentColor"
-                  level="M"
-                  className="text-foreground"
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                  level="H"
                 />
               </div>
               <div className="relative">
