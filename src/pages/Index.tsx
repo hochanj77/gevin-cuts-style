@@ -110,9 +110,9 @@ const Index = () => {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="font-heading text-6xl sm:text-7xl md:text-[7.5rem] lg:text-[9.5rem] font-bold leading-[0.85] tracking-tight text-foreground"
           >
-            STAY
+            <span className="text-foreground">STAY</span>
             <br />
-            <span className="text-chrome text-serif-italic italic">fresh</span>
+            <span className="text-foreground/90 text-serif-italic italic">fresh</span>
           </motion.h1>
 
           <motion.div
