@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
-import { MapPin, Instagram } from "lucide-react";
+import { MapPin, Instagram, MessageSquare } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import Layout from "@/components/Layout";
+import { GEVIN_PHONE, PREFILLED_MESSAGE, CONTACT_PAGE_URL } from "@/config";
+import { formatPhone } from "@/lib/formatPhone";
 
 const Contact = () => {
+  const smsHref = `sms:${GEVIN_PHONE}?body=${encodeURIComponent(PREFILLED_MESSAGE)}`;
+  const formattedPhone = formatPhone(GEVIN_PHONE);
+
   return (
     <Layout>
       <section className="relative py-14 md:py-32 overflow-hidden">
@@ -34,6 +39,22 @@ const Contact = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="space-y-6"
           >
+            {/* Primary action: Text Gevin */}
+            <a
+              href={smsHref}
+              className="group relative flex items-start gap-4 rounded-2xl border border-accent/40 bg-foreground/[0.06] backdrop-blur-xl px-5 py-4 shadow-[0_0_40px_-12px_hsl(var(--accent)/0.45),inset_0_1px_0_0_hsl(var(--foreground)/0.08)] transition-all hover:border-accent/70 hover:bg-foreground/[0.09]"
+            >
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.12] via-transparent to-transparent pointer-events-none" />
+              <MessageSquare className="text-accent mt-1 shrink-0 relative" size={20} />
+              <div className="relative">
+                <h3 className="font-heading text-lg text-foreground mb-1">TEXT GEVIN</h3>
+                <p className="text-muted-foreground text-sm">Tap to send a text and book your cut</p>
+              </div>
+            </a>
+            <p className="-mt-3 text-xs text-muted-foreground text-center sm:text-left sm:pl-5">
+              On desktop? Text <span className="font-mono text-foreground/80">{formattedPhone}</span>
+            </p>
+
             {[
               { Icon: MapPin, title: "LOCATION", body: <>The Shop Barbershop<br />Est. 2003</> },
               {
@@ -64,16 +85,17 @@ const Contact = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-foreground/[0.08] via-transparent to-transparent pointer-events-none" />
               <div className="relative rounded-xl bg-white p-3 border border-foreground/10 shrink-0">
                 <QRCodeSVG
-                  value={typeof window !== "undefined" ? window.location.href : "https://gevin-cuts-style.lovable.app/contact"}
+                  value={CONTACT_PAGE_URL}
                   size={120}
                   bgColor="#ffffff"
                   fgColor="#000000"
                   level="H"
+                  marginSize={2}
                 />
               </div>
               <div className="relative">
                 <h3 className="font-heading text-lg text-foreground mb-1">SCAN TO BOOK</h3>
-                <p className="text-muted-foreground text-sm">Save this page or share it instantly.</p>
+                <p className="text-muted-foreground text-sm">Share this code so others can text Gevin.</p>
               </div>
             </div>
           </motion.div>
