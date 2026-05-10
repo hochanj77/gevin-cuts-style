@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 const Contact = () => {
   return (
     <Layout>
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-14 md:py-32 overflow-hidden">
         {/* Ambient liquid background */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-32 -left-24 h-[28rem] w-[28rem] rounded-full bg-accent/30 blur-[120px]" />
@@ -19,9 +19,9 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4">GET IN TOUCH</h1>
+            <h1 className="font-heading text-4xl md:text-7xl font-bold text-foreground mb-3 md:mb-4">GET IN TOUCH</h1>
             <div className="w-16 h-px bg-accent mx-auto mb-6" />
             <p className="text-muted-foreground max-w-md mx-auto">
               Ready for a fresh cut? Book an appointment or drop a message.
@@ -60,12 +60,12 @@ const Contact = () => {
             ))}
 
             {/* QR code card */}
-            <div className="relative flex items-center gap-5 rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl px-5 py-5 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)]">
+            <div className="relative flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl px-5 py-5 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)] text-center sm:text-left">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-foreground/[0.08] via-transparent to-transparent pointer-events-none" />
-              <div className="relative rounded-xl bg-white p-3 border border-foreground/10">
+              <div className="relative rounded-xl bg-white p-3 border border-foreground/10 shrink-0">
                 <QRCodeSVG
                   value={typeof window !== "undefined" ? window.location.href : "https://gevin-cuts-style.lovable.app/contact"}
-                  size={104}
+                  size={120}
                   bgColor="#ffffff"
                   fgColor="#000000"
                   level="H"

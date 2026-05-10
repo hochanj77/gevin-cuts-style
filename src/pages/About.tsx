@@ -68,7 +68,7 @@ const About = () => (
             ABOUT — EST. 2014
           </p>
           <h1 className="font-heading font-bold leading-[0.85] tracking-tight">
-            <span className="block text-7xl md:text-9xl lg:text-[10rem] text-foreground">GEVIN</span>
+            <span className="block text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] text-foreground">GEVIN</span>
           </h1>
           <div className="mt-8 flex items-center gap-4 mb-10">
             <div className="w-16 h-px bg-accent" />
@@ -158,13 +158,13 @@ const About = () => (
           transition={{ duration: 0.8 }}
           className="relative rounded-3xl overflow-hidden glass glass-sheen p-2"
         >
-          <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden">
+          <div className="relative aspect-[4/5] sm:aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden">
             <SmoothImage src={wide} alt="At work" wrapperClassName="w-full h-full" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
-            <div className="absolute inset-0 flex items-center">
-              <div className="max-w-xl px-6 md:px-12 lg:px-16">
-                <p className="font-heading text-xs tracking-[0.3em] text-accent mb-4">03 — THE PHILOSOPHY</p>
-                <blockquote className="font-heading text-2xl md:text-4xl lg:text-5xl text-foreground leading-tight">
+            <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-background via-background/70 sm:via-background/60 to-transparent" />
+            <div className="absolute inset-0 flex items-end sm:items-center">
+              <div className="max-w-xl px-5 pb-6 sm:pb-0 sm:px-8 md:px-12 lg:px-16">
+                <p className="font-heading text-[10px] md:text-xs tracking-[0.3em] text-accent mb-3 md:mb-4">03 — THE PHILOSOPHY</p>
+                <blockquote className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-5xl text-foreground leading-tight">
                   "I seek to give more than just a haircut —<br />
                   <span className="text-accent italic font-normal">an experience that impacts their life out the chair.</span>"
                 </blockquote>
@@ -221,7 +221,7 @@ const About = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="glass-strong glass-sheen rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+          className="glass-strong glass-sheen rounded-3xl p-6 sm:p-10 md:p-16 text-center relative overflow-hidden"
         >
           <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-accent/20 blur-3xl" />
           <p className="font-heading text-xs tracking-[0.3em] text-accent mb-4 relative">READY WHEN YOU ARE</p>
