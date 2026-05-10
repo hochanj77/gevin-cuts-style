@@ -112,7 +112,7 @@ const Index = () => {
           >
             STAY
             <br />
-            <span className="text-accent">FRESH</span>
+            <span className="text-chrome text-serif-italic italic">fresh</span>
           </motion.h1>
 
           <motion.div
