@@ -73,7 +73,8 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
+    font-weight: 400;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -93,7 +94,8 @@
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
+  background: linear-gradient(180deg, hsl(0 0% 60%), hsl(0 0% 30%));
+  border-radius: 3px;
 }
 
 @layer components {
