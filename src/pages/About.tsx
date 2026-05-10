@@ -68,7 +68,7 @@ const About = () => (
             ABOUT — EST. 2014
           </p>
           <h1 className="font-heading font-bold leading-[0.85] tracking-tight">
-            <span className="block text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] text-chrome">GEVIN</span>
+            <span className="block text-6xl sm:text-7xl md:text-9xl lg:text-[10rem] text-foreground">GEVIN</span>
           </h1>
           <div className="mt-8 flex items-center gap-4 mb-10">
             <div className="w-16 h-px bg-accent" />

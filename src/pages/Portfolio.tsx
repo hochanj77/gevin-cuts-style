@@ -39,7 +39,7 @@ const Portfolio = () => {
             transition={{ duration: 0.7 }}
             className="text-center mb-10 md:mb-16"
           >
-            <h1 className="font-heading text-4xl md:text-7xl font-bold mb-3 md:mb-4"><span className="text-foreground">PORT</span><span className="text-chrome text-serif-italic italic">folio</span></h1>
+            <h1 className="font-heading text-4xl md:text-7xl font-bold mb-3 md:mb-4"><span className="text-foreground">PORT</span><span className="text-foreground/90 text-serif-italic italic">folio</span></h1>
             <div className="w-16 h-px bg-accent mx-auto mb-4 md:mb-6" />
             <p className="text-sm md:text-base text-muted-foreground max-w-md mx-auto px-4">
               A selection of cuts and styles. Every client, a unique canvas.
