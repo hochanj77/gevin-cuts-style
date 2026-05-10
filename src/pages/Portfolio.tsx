@@ -60,6 +60,7 @@ const Portfolio = () => {
                 <SmoothImage
                   src={src}
                   alt={`Haircut ${i + 1}`}
+                  loading="eager"
                   wrapperClassName="w-full h-full rounded-xl"
                   className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-110"
                 />
