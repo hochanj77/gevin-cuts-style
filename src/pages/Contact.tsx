@@ -26,7 +26,7 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="text-center mb-10 md:mb-16"
           >
-            <h1 className="font-heading text-4xl md:text-7xl font-bold text-foreground mb-3 md:mb-4">GET IN TOUCH</h1>
+            <h1 className="font-heading text-4xl md:text-7xl font-bold mb-3 md:mb-4"><span className="text-foreground">GET IN </span><span className="text-chrome text-serif-italic italic">touch</span></h1>
             <div className="w-16 h-px bg-accent mx-auto mb-6" />
             <p className="text-muted-foreground max-w-md mx-auto">
               Ready for a fresh cut? Book an appointment or drop a message.
