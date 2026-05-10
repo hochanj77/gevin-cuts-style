@@ -81,8 +81,8 @@ const Contact = () => {
             ))}
 
             {/* QR code card */}
-            <div className="relative flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 rounded-2xl border border-foreground/10 bg-foreground/[0.04] backdrop-blur-xl px-5 py-5 shadow-[inset_0_1px_0_0_hsl(var(--foreground)/0.08)] text-center sm:text-left">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-foreground/[0.08] via-transparent to-transparent pointer-events-none" />
+            <div className="group relative flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 rounded-2xl border border-accent/40 bg-foreground/[0.06] backdrop-blur-xl px-5 py-5 shadow-[0_0_40px_-12px_hsl(var(--accent)/0.45),inset_0_1px_0_0_hsl(var(--foreground)/0.08)] text-center sm:text-left transition-all hover:border-accent/70 hover:bg-foreground/[0.09]">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.12] via-transparent to-transparent pointer-events-none" />
               <div className="relative rounded-xl bg-white p-3 border border-foreground/10 shrink-0">
                 <QRCodeSVG
                   value={CONTACT_PAGE_URL}
