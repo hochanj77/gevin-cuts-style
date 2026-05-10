@@ -31,22 +31,22 @@ const Portfolio = () => {
 
   return (
     <Layout>
-      <section className="py-20 md:py-32">
-        <div className="container">
+      <section className="py-12 md:py-32">
+        <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4">PORTFOLIO</h1>
-            <div className="w-16 h-px bg-accent mx-auto mb-6" />
-            <p className="text-muted-foreground max-w-md mx-auto">
+            <h1 className="font-heading text-4xl md:text-7xl font-bold text-foreground mb-3 md:mb-4">PORTFOLIO</h1>
+            <div className="w-16 h-px bg-accent mx-auto mb-4 md:mb-6" />
+            <p className="text-sm md:text-base text-muted-foreground max-w-md mx-auto px-4">
               A selection of cuts and styles. Every client, a unique canvas.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
             {images.map((src, i) => (
               <motion.div
                 key={i}
